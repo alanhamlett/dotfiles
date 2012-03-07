@@ -9,7 +9,7 @@ Installation
 -------
 
     git clone git://github.com/alanhamlett/vimrc-for-Perl-Programmers.git
-    cp vimrc-for-Perl-Programmers/.vimrc $HOME/
+    cp -R vimrc-for-Perl-Programmers/.vim* $HOME/
 
 Project Page
 ------------

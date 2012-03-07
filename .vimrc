@@ -24,6 +24,8 @@
 ""      n - go to next search result
 ""      SHIFT-n - go to previous search result
 ""  Buffer Navigation:
+""  ( For easy buffer navigation I use the minibufexpl.vim plugin at
+""    http://www.vim.org/scripts/script.php?script_id=159 )
 ""      :e <file> - edit <file> in a new buffer
 ""      :ls - list current buffers
 ""      :b <part of file name> - switch to buffer with TAB completion
