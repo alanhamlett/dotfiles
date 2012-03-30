@@ -1,6 +1,7 @@
 ""
 "" Vim Configuration
 ""  Author: Alan Hamlett <alan.hamlett@gmail.com>
+""  Website: https://github.com/alanhamlett/Alan-vimrc
 ""
 
 "" Cheat Sheet
