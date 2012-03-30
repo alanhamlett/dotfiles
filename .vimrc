@@ -41,7 +41,7 @@
     set encoding=utf-8
     set noexrc " don't use local version of .(g)vimrc, .exrc
     set clipboard+=unnamed " share system clipboard
-    set mouse=a " use mouse everywhere
+    "set mouse=a " use mouse everywhere
     set noerrorbells " don't make beep noises
     set showcmd " display incomplete commands
     "set autochdir " switch to directory containing current file
@@ -61,24 +61,37 @@
 " }
 
 " File Syntax and Folding {
+    " Folding Commands:
+    "  zR - Open all folds
+    "  zM - Close all folds
+    "  zc - Close one fold under the cursor
+    "  zC - Close all folds under the cursor recursively
+    "  zv - Open just enough folds to make the line in which the cursor is located not folded
+    "  zo - Open one fold under the cursor
+    "  zO - Open all folds under the cursor recursively
     if &t_Co > 1
         syntax on " enable syntax highlighting in Vim5 and newer
     endif
-    let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
-    set iskeyword+=@-@,:,$,% " none of these are word dividers
+    set iskeyword+=_,$,@,% " none of these are word dividers
     set expandtab " Use spaces for indenting
     set shiftwidth=4 " Number of spaces per indent
     set softtabstop=4 " Number of spaces per tab
     set tabstop=4 " Number of spaces in actual tabs
     set autoindent " When pressing Enter, cursor gets indented to same column as previous line
     set foldenable " auto fold code
-    set foldmarker={,} " fold C style blocks
-    set foldmethod=marker " fold using markers
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
+    " File Type Specific Settings {
+        au FileType python set foldmethod=indent " autofold using indents
+        au FileType perl set foldmethod=marker " autofold using markers
+        au FileType javascript set foldmethod=marker " autofold using markers
+        au FileType perl set foldmarker={,} " autofold using brackets
+        au FileType javascript set foldmarker={,} " autofold using brackets
+        au FileType perl let perl_extended_vars=1 " highlight Perl vars inside strings
+    " }
 " }
 
 " UI {
