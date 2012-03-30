@@ -74,7 +74,7 @@
     endif
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
-    set iskeyword+=_,$,@,% " none of these are word dividers
+    set iskeyword+=@-@,_,$,% " none of these are word dividers
     set expandtab " Use spaces for indenting
     set shiftwidth=4 " Number of spaces per indent
     set softtabstop=4 " Number of spaces per tab
