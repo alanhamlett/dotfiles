@@ -15,6 +15,7 @@
 ""      zv - Open just enough folds to make the line in which the cursor is located not folded
 ""      zj - Jump to start of next fold
 ""      zk - Jump to end of previous fold
+"       Backslash then fN - folds all blocks at level N, where 0 <= N <= 9
 ""  Window Navigation:
 ""      CTRL-h - Move cursor to window left of current one
 ""      CTRL-j - Move cursor to window below current one
@@ -62,14 +63,6 @@
 " }
 
 " File Syntax and Folding {
-    " Folding Commands:
-    "  zR - Open all folds
-    "  zM - Close all folds
-    "  zc - Close one fold under the cursor
-    "  zC - Close all folds under the cursor recursively
-    "  zv - Open just enough folds to make the line in which the cursor is located not folded
-    "  zo - Open one fold under the cursor
-    "  zO - Open all folds under the cursor recursively
     if &t_Co > 1
         syntax on " enable syntax highlighting in Vim5 and newer
     endif
