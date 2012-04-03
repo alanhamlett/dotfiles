@@ -1,7 +1,7 @@
 Alan's vimrc
 ====================
 
-Author: "Alan Hamlett" <alan@h4ck3r.org>
+Author: "Alan Hamlett" <alan.hamlett@gmail.com>
 
 Best if used with Guake Terminal or iTerm.
 
