@@ -7,7 +7,7 @@ Currently setup to fold code blocks for Perl, Python, Javascript.
     cp -R Alan-vimrc/.vim* $HOME/
 
 ### Project Page
-https://github.com/alanhamlett/Alan-vimrc
+http://alanhamlett.github.com/Alan-vimrc
 
 ### Authors and Contributors
 "Alan Hamlett" \<alan.hamlett@gmail.com> @alanhamlett
