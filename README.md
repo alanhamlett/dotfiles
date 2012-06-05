@@ -1,4 +1,4 @@
-### Alan's Vim Configuration File
+## Alan's Vim Configuration File
 Currently setup to fold code blocks for Perl, Python, Javascript.
 
 ### Installation
