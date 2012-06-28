@@ -34,7 +34,7 @@
 ""      :bn - next buffer
 ""      :bp - previous buffer
 ""      CTRL-6 - switch to previously used buffer
-""      #-CTRL-6 - switch to buffer number #
+""      :#b - switch to buffer number #
 ""      :b # - switch to buffer number #
 ""      :bd # - delete buffer number #
 
