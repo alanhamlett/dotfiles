@@ -9,6 +9,9 @@ Currently setup to fold code blocks for Perl, Python, Javascript.
 For terminal users, import the Solarized color scheme:
 https://github.com/altercation/solarized
 
+Also check out the Anonymous Pro font:
+http://www.ms-studio.com/FontSales/anonymouspro.html
+
 ### Project Page
 http://alanhamlett.github.com/Alan-vimrc
 
