@@ -16,11 +16,5 @@ http://www.ms-studio.com/FontSales/anonymouspro.html
 
 ![screenshot1](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/screenshot1.png)
 
-### Project Page
-http://alanhamlett.github.com/Alan-vimrc
-
-### Authors and Contributors
-"Alan Hamlett" \<alan.hamlett@gmail.com> @alanhamlett
-
 ### Notes
 Best if used with [Guake Terminal](http://guake.org/) or [iTerm2](http://www.iterm2.com/#/section/home).
