@@ -14,7 +14,7 @@ http://www.ms-studio.com/FontSales/anonymouspro.html
 
 ### Screen Shot
 
-[![screenshot1](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/screenshot1.png)]
+![screenshot1](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/screenshot1.png)
 
 ### Project Page
 http://alanhamlett.github.com/Alan-vimrc
