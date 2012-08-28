@@ -65,7 +65,7 @@ hi Tooltip guifg=#cccccc ctermfg=252 guibg=#000000 ctermbg=0
 " Syntax Groups
 hi Comment guifg=#008000 ctermfg=28 guibg=NONE ctermbg=NONE
 hi Constant guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
-    hi String guifg=#808080 ctermfg=240 guibg=NONE ctermbg=NONE
+    hi String guifg=#333333 ctermfg=250 guibg=NONE ctermbg=NONE
     hi Character guifg=#808080 ctermfg=244 guibg=NONE ctermbg=NONE
     hi Number guifg=#FF0000 ctermfg=9 guibg=NONE ctermbg=NONE
     hi Boolean guifg=#FF0000 ctermfg=9 guibg=NONE ctermbg=NONE

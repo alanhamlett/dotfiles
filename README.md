@@ -6,6 +6,9 @@ Currently setup to fold code blocks for Perl, Python, Javascript.
     git clone git://github.com/alanhamlett/Alan-vimrc.git
     cp -R Alan-vimrc/.vim* $HOME/
 
+For terminal users, import the Solarized color scheme:
+https://github.com/altercation/solarized
+
 ### Project Page
 http://alanhamlett.github.com/Alan-vimrc
 
