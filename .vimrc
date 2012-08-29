@@ -122,13 +122,15 @@
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif " restore cursor position when reopening files
     set t_Co=256 " enable 256 colors
 
-    " Load a default color scheme
-    set background=dark
-    let g:solarized_termcolors=16
-    if !has('gui_running')
-        let g:solarized_termtrans=1
+    " Load solarized as the default color scheme
+    if filereadable(expand("$HOME/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+        set background=dark
+        let g:solarized_termcolors=16
+        if !has('gui_running')
+            let g:solarized_termtrans=1
+        endif
+        colorscheme solarized
     endif
-    colorscheme solarized
 " }
 
 " Key Mappings {
