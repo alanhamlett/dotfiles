@@ -14,6 +14,12 @@
 ""      zv - Open just enough folds to make the line in which the cursor is located not folded
 ""      zj - Jump to start of next fold
 ""      zk - Jump to end of previous fold
+""  Vundle:
+""      :BundleList          - list configured bundles
+""      :BundleInstall(!)    - install(update) bundles
+""      :BundleSearch(!) foo - search(or refresh cache first) for foo
+""      :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+""      :h vundle            - more vundle help
 ""  Window Navigation:
 ""      CTRL-h - Move cursor to window left of current one
 ""      CTRL-j - Move cursor to window below current one
@@ -35,11 +41,39 @@
     set encoding=utf-8
     set noexrc " don't use local version of .(g)vimrc, .exrc
     set clipboard+=unnamed " share system clipboard
-    set mouse=a " use mouse everywhere
+    "set mouse=a " use mouse everywhere
     set noerrorbells " don't make beep noises
     set showcmd " display incomplete commands
     "set autochdir " switch to directory containing current file
-    set hidden
+    set hidden " allow switching buffers without saving changes to file
+" }
+
+" Vundle Setup {
+    filetype on
+    filetype off " required!
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    " let Vundle manage Vundle
+    " required! 
+    Bundle 'gmarik/vundle'
+
+    " My Bundles here:
+    "
+    " original repos on github
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'fholgado/minibufexpl.vim'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'Lokaltog/vim-easymotion'
+    Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+    "Bundle 'tpope/vim-rails.git'
+    " vim-scripts repos
+    "Bundle 'L9'
+    "Bundle 'FuzzyFinder'
+    "Bundle 'SyntaxAttr'
+    " non github repos
+    "Bundle 'git://git.wincent.com/command-t.git'
 " }
 
 " Backup, Swap, and View Files {
@@ -55,17 +89,7 @@
 " }
 
 " File Syntax and Folding {
-    " Folding Commands:
-    "  zR - Open all folds
-    "  zM - Close all folds
-    "  zc - Close one fold under the cursor
-    "  zC - Close all folds under the cursor recursively
-    "  zv - Open just enough folds to make the line in which the cursor is located not folded
-    "  zo - Open one fold under the cursor
-    "  zO - Open all folds under the cursor recursively
-    if &t_Co > 1
-        syntax on " enable syntax highlighting in Vim5 and newer
-    endif
+    syntax on " enable syntax highlighting in Vim5 and newer
     let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
@@ -93,16 +117,17 @@
     set wildmenu " show shell style completion list
     set wildmode=list:longest,full " command <Tab> completion, list matches, then longest common part, then all.
     set scrolloff=2 " minimum lines to keep above and below cursor
-    set laststatus=2 " Status bar with file name etc. 0=never, 1=only if > 1 file/buffer/tab, 0=always
+    set laststatus=2 " Status bar with file name etc. 0=never, 1=only if > 1 file/buffer/tab, 2=always
     set ruler "Show %of file remaining in statusbar
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif " restore cursor position when reopening files
-    "set cursorline " highlight current row
-    ":hi CursorLine cterm=standout ctermbg=NONE ctermfg=NONE " change colors of current row
     set t_Co=256 " enable 256 colors
 
     " Load a default color scheme
     set background=dark
-    let g:solarized_termcolors=256
+    let g:solarized_termcolors=16
+    if !has('gui_running')
+        let g:solarized_termtrans=1
+    endif
     colorscheme solarized
 " }
 
