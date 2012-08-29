@@ -5,7 +5,7 @@ Currently setup to fold code blocks for Perl, Python, Javascript.
 
     git clone git://github.com/alanhamlett/Alan-vimrc.git
     cp Alan-vimrc/.vimrc $HOME/
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
 
 Install the solarized color palette for your terminal.
