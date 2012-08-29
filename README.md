@@ -12,7 +12,7 @@ https://github.com/altercation/solarized
 Also check out the Anonymous Pro font:
 http://www.ms-studio.com/FontSales/anonymouspro.html
 
-### Screen Shot
+### Screenshot
 
 ![screenshot1](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/screenshot1.png)
 
