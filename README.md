@@ -7,11 +7,11 @@ Using the [Solarized](https://github.com/altercation/solarized#features) color s
 
 Using [Vundle](https://github.com/gmarik/vundle#about) to manage these Vim plugins:
 
-* [https://github.com/Lokaltog/vim-powerline#screenshots](Lokaltog/vim-powerline)
-* [https://github.com/fholgado/minibufexpl.vim#features-overview](fholgado/minibufexpl.vim)
-* [https://github.com/tpope/vim-fugitive#fugitivevim](tpope/vim-fugitive)
-* [https://github.com/Lokaltog/vim-easymotion#introduction](Lokaltog/vim-easymotion)
-* [https://github.com/rstacruz/sparkup#sparkup](rstacruz/sparkup)
+* [Lokaltog/vim-powerline](https://github.com/Lokaltog/vim-powerline#screenshots)
+* [fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim#features-overview)
+* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive#fugitivevim)
+* [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion#introduction)
+* [rstacruz/sparkup](https://github.com/rstacruz/sparkup#sparkup)
 
 Screenshot
 ----------
