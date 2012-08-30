@@ -49,8 +49,8 @@
 " }
 
 " Vundle Setup {
-    filetype on
-    filetype off " required!
+    "filetype on " must set to on first for MacOSX
+    "filetype off " required!
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
 
@@ -89,6 +89,7 @@
 " }
 
 " File Syntax and Folding {
+    filetype on
     syntax on " enable syntax highlighting in Vim5 and newer
     let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
