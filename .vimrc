@@ -135,6 +135,9 @@
 " }
 
 " Key Mappings {
+    
+    " pressing v escapes from visual mode
+    vnoremap <v> <Esc>
 
     " scroll with space in normal mode
     noremap <space> <C-e>
