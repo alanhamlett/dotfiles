@@ -103,6 +103,7 @@
     set foldenable " auto fold code
     set foldmarker={,} " fold C style blocks
     set foldmethod=marker " fold using markers
+    au FileType python set foldmethod=indent " fold using indent for python files
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
