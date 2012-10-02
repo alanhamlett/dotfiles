@@ -91,6 +91,7 @@
 " File Syntax and Folding {
     filetype on
     syntax on " enable syntax highlighting in Vim5 and newer
+    syntax sync minlines=500 " use last minlines for syntax highlighting
     let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
@@ -102,8 +103,12 @@
     set autoindent " When pressing Enter, cursor gets indented to same column as previous line
     set foldenable " auto fold code
     set foldmarker={,} " fold C style blocks
-    set foldmethod=marker " fold using markers
-    au FileType python set foldmethod=indent " fold using indent for python files
+    set foldmethod=indent " fold using indentions by default
+    au FileType perl setlocal ts=4 sts=4 sw=4 foldmethod=marker
+    au Filetype javascript setlocal ts=4 sts=4 sw=4 foldmethod=marker
+    au FileType python setlocal ts=4 sts=4 sw=4 foldmethod=indent
+    au Filetype html setlocal ts=2 sts=2 sw=2 foldmethod=indent
+    au Filetype ruby setlocal ts=2 sts=2 sw=2 foldmethod=indent
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
