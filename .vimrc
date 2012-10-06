@@ -91,7 +91,7 @@
 " File Syntax and Folding {
     filetype on
     syntax on " enable syntax highlighting in Vim5 and newer
-    syntax sync minlines=500 " use last minlines for syntax highlighting
+    au BufEnter * :syntax sync fromstart " most accurate syntax highlighting
     let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
