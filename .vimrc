@@ -14,6 +14,7 @@
 ""      zv - Open just enough folds to make the line in which the cursor is located not folded
 ""      zj - Jump to start of next fold
 ""      zk - Jump to end of previous fold
+""      set foldlevel=N - Close all folds at level N
 ""  Vundle:
 ""      :BundleList          - list configured bundles
 ""      :BundleInstall(!)    - install(update) bundles
@@ -46,6 +47,13 @@
     set showcmd " display incomplete commands
     "set autochdir " switch to directory containing current file
     set hidden " allow switching buffers without saving changes to file
+    fun! <SID>StripTrailingWhitespaces()
+        let l = line(".")
+        let c = col(".")
+        %s/\s\+$//e
+        call cursor(l, c)
+    endfun
+    autocmd FileType c,cpp,java,javascript,perl,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 " }
 
 " Vundle Setup {
