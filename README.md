@@ -1,17 +1,25 @@
 Alan's Vim Configuration File
 =============================
 
-Currently setup to fold code blocks for Perl, Python, Javascript.
+Unlesh the full potential of Vim!
 
-Using the [Solarized](https://github.com/altercation/solarized#features) color scheme.
+Key Features
+------------
 
-Using [Vundle](https://github.com/gmarik/vundle#about) to manage these Vim plugins:
+* Code folding for bracket or indention based languages
+* Edit multiple files in tabs using minibufexpl plugin
+* Using the [Solarized](https://github.com/altercation/solarized#features) color scheme.
+* Using [Vundle](https://github.com/gmarik/vundle#about) for plugin management (apt-get for Vim plugins).
+
+Plugins Included
+----------------
 
 * [Lokaltog/vim-powerline](https://github.com/Lokaltog/vim-powerline#screenshots)
 * [fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim#features-overview)
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive#fugitivevim)
 * [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion#introduction)
 * [rstacruz/sparkup](https://github.com/rstacruz/sparkup#sparkup)
+* [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 Screenshot
 ----------

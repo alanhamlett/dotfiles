@@ -162,6 +162,9 @@
     noremap <C-k> <C-w>k
     noremap <C-l> <C-w>l
 
+    " re-load syntax highlighting for current buffer
+    noremap <C-S> :syntax sync fromstart
+
     " Show syntax group for character under cursor by pressing CTRL SHIFT p
     noremap <C-S-P> :call SyntaxAttr()<CR>
 
