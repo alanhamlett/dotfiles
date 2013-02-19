@@ -6,11 +6,11 @@ Unlesh the full potential of Vim!
 Key Features
 ------------
 
-* Code folding for bracket or indention based languages.
-* Edit multiple files in tabs using minibufexpl plugin.
-* Using the [Solarized](https://github.com/altercation/solarized#features) color scheme.
-* Using [Vundle](https://github.com/gmarik/vundle#about) for plugin management (apt-get for Vim plugins).
-* Common swp, backup, & view directories (No more ~ files left around).
+* Code folding for bracket or indention based languages
+* Edit multiple files in tabs using minibufexpl plugin
+* Using the [Solarized](https://github.com/altercation/solarized#features) color scheme
+* Using [Vundle](https://github.com/gmarik/vundle#about) for plugin management (apt-get for Vim plugins)
+* Common swp, backup, & view directories (No more ~ files left around)
 * Useful defaults (spaces instead of tabs, remove trailing newlines, etc.)
 
 Plugins Included
