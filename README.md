@@ -26,7 +26,7 @@ Plugins Included
 Screenshot
 ----------
 
-![screenshot1](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/screenshot1.png)
+![VimScreenShot](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/VimScreenShot.png)
 
 Installation
 ------------
