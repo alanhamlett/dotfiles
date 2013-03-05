@@ -72,6 +72,7 @@
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
+    Bundle 'airblade/vim-gitgutter'
     Bundle 'tpope/vim-fugitive'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
