@@ -146,6 +146,9 @@
             let g:solarized_termtrans=1
         endif
         colorscheme solarized
+
+        " Fix background color for vim-gitgutter
+        highlight SignColumn ctermbg=NONE
     endif
 " }
 

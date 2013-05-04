@@ -18,10 +18,11 @@ Plugins Included
 
 * [Lokaltog/vim-powerline](https://github.com/Lokaltog/vim-powerline#screenshots)
 * [fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim#features-overview)
+* [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive#fugitivevim)
 * [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion#introduction)
 * [rstacruz/sparkup](https://github.com/rstacruz/sparkup#sparkup)
-* [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 Screenshot
 ----------
