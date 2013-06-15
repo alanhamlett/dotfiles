@@ -14,6 +14,7 @@
 ""      zv - Open just enough folds to make the line in which the cursor is located not folded
 ""      zj - Jump to start of next fold
 ""      zk - Jump to end of previous fold
+""      set foldlevel=N - Close all folds at level N
 ""  Vundle:
 ""      :BundleList          - list configured bundles
 ""      :BundleInstall(!)    - install(update) bundles
@@ -158,6 +159,9 @@
             let g:solarized_termtrans=1
         endif
         colorscheme solarized
+
+        " Fix background color for vim-gitgutter
+        highlight SignColumn ctermbg=NONE
     endif
 " }
 
