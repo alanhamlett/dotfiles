@@ -3,6 +3,14 @@ Alan's Vim Configuration File
 
 Use my [.vimrc config file](https://github.com/alanhamlett/Alan-vimrc/blob/master/.vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
 
+Quick Install Commands
+---------------------------
+
+    git clone git://github.com/alanhamlett/Alan-vimrc.git
+    cp Alan-vimrc/.vimrc $HOME/
+    git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+    vim +BundleInstall +qall
+
 Key Features
 ------------
 
