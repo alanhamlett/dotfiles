@@ -74,7 +74,7 @@
     Bundle 'airblade/vim-gitgutter'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
-    Bundle 'LargeFile'
+    Bundle 'LargeFile' " turn off syntax highlighting for files > 20MB
     "Bundle 'Lokaltog/vim-easymotion'
     "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     "Bundle 'tpope/vim-rails.git'
@@ -102,12 +102,6 @@
     " Turn off syntax highlighting for long lines
     set synmaxcol=200
     
-    " Turn off syntax highlighting for files larger than 512KB
-    " (Also using LargeFile plugin which defaults to 20MB)
-    au BufReadPost * if getfsize(bufname("%")) > 512*1024 |
-        \ set syntax off |
-        \ endif
-
     " language specific word dividers
     au FileType perl set iskeyword+=@-@,$,%
     au FileType javascript set iskeyword+=$
