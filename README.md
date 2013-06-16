@@ -1,7 +1,7 @@
 Alan's Vim Configuration File
 =============================
 
-Unlesh the full potential of Vim!
+Use my [.vimrc config file](https://github.com/alanhamlett/Alan-vimrc/blob/master/.vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
 
 Key Features
 ------------
