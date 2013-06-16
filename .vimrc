@@ -139,7 +139,9 @@
     set ruler "Show %of file remaining in statusbar
 
     " Highlight column 80 to help with line wrapping
-    set colorcolumn=80
+    if exists('+colorcolumn')
+        set colorcolumn=80
+    endif
 
     " restore cursor position when reopening files
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
