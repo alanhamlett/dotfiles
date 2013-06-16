@@ -40,24 +40,24 @@ Screenshot
 Installation
 ------------
 
-### Download and copy the [.vimrc](https://github.com/alanhamlett/Alan-vimrc/raw/master/.vimrc) file into your home directory:
+### Download and install my [.vimrc](https://github.com/alanhamlett/Alan-vimrc/raw/master/.vimrc) file:
 
     git clone git://github.com/alanhamlett/Alan-vimrc.git
     cp Alan-vimrc/.vimrc $HOME/
 
-### Download and install [Vundle](https://github.com/gmarik/vundle#about), the package manager for Vim plugins & color schemes:
+### Download and install [Vundle](https://github.com/gmarik/vundle#about), the vim plugin manager:
 
     git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 
-### Install the Vim plugins and the Solarized color scheme defined in the .vimrc file using vundle:
+### Install the Vim plugins using Vundle:
 
     vim +BundleInstall +qall
 
-Use a font that's easy on your eyes like the free [Anonymous Pro](http://www.ms-studio.com/FontSales/anonymouspro.html) or Consolas:
+### Use a font that's easy on your eyes like the free [Anonymous Pro](http://www.ms-studio.com/FontSales/anonymouspro.html) or Consolas:
 
     sudo apt-get install fonts-inconsolata
 
-### For terminal users, install the solarized color palette for your terminal.
+### Install the solarized color palette in your terminal:
 
 [iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized):
 
@@ -71,8 +71,8 @@ Use a font that's easy on your eyes like the free [Anonymous Pro](http://www.ms-
     git clone git://github.com/coolwanglu/guake-colors-solarized.git
     ./guake-colors-solarized/set_dark.sh solarized
 
-### You can choose light or dark colors with solarized by editing your $HOME/.vimrc file:
+### Choose Solarized's light or dark theme in your .vimrc file:
 
-    set background=light
+    set background=dark
 
 More info on the official [Solarized page](https://github.com/altercation/solarized#features).
