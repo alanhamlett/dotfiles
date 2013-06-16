@@ -74,7 +74,7 @@
     Bundle 'airblade/vim-gitgutter'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
-    Bundle 'LargeFile' " turn off syntax highlighting for files > 20MB
+    Bundle 'LargeFile'
     "Bundle 'Lokaltog/vim-easymotion'
     "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
     "Bundle 'tpope/vim-rails.git'

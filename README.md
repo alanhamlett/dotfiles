@@ -7,7 +7,7 @@ Quick Install Commands
 ---------------------------
 
     git clone git://github.com/alanhamlett/Alan-vimrc.git
-    cp Alan-vimrc/.vimrc $HOME/
+    ln -sf $PWD/Alan-vimrc/.vimrc $HOME/
     git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
     vim +BundleInstall +qall
 
@@ -43,7 +43,7 @@ Installation
 ### Download and install my [.vimrc](https://github.com/alanhamlett/Alan-vimrc/raw/master/.vimrc) file:
 
     git clone git://github.com/alanhamlett/Alan-vimrc.git
-    cp Alan-vimrc/.vimrc $HOME/
+    ln -sf $PWD/Alan-vimrc/.vimrc $HOME/
 
 ### Download and install [Vundle](https://github.com/gmarik/vundle#about), the vim plugin manager:
 
