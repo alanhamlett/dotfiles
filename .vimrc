@@ -100,7 +100,7 @@
     syntax on " enable syntax highlighting in Vim5 and newer
 
     " Turn off syntax highlighting for long lines
-    set synmaxcol=200
+    set synmaxcol=600
     
     " language specific word dividers
     au FileType perl set iskeyword+=@-@,$,%
