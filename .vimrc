@@ -17,9 +17,8 @@
 ""      set foldlevel=N - Close all folds at level N
 ""  Vundle:
 ""      :BundleList          - list configured bundles
-""      :BundleInstall(!)    - install(update) bundles
-""      :BundleSearch(!) foo - search(or refresh cache first) for foo
-""      :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+""      :BundleInstall       - install bundles
+""      :BundleUpdate        - update bundles
 ""      :h vundle            - more vundle help
 ""  Window Navigation:
 ""      CTRL-h - Move cursor to window left of current one
@@ -30,12 +29,14 @@
 ""      :e <file> - edit <file> in a new buffer
 ""      :ls - list current buffers
 ""      :b <part of file name> - switch to buffer with TAB completion
-""      :bn - next buffer
-""      :bp - previous buffer
+""      CTRL-n - switch to next buffer
+""      CTRL-p - switch to previous buffer
+""      CTRL-d - delete current buffer
+""      :MBEbf - Move one buffer forward in the most recent used buffer list
+""      :MBEbb - Move one buffer backward in the most recent used buffer list
 ""      CTRL-6 - switch to previously used buffer
 ""      #-CTRL-6 - switch to buffer number #
 ""      :b # - switch to buffer number #
-""      :bd # - delete buffer number #
 
 " General {
     set nocompatible " explicitly get out of vi-compatible mode
@@ -199,6 +200,14 @@
     
     " Show syntax group for character under cursor by pressing CTRL SHIFT p
     noremap <C-S-P> :call SyntaxAttr()<CR>
+
+    " Set MiniBufExpl Mappings
+    map <Leader>e :MBEOpen<cr>
+    map <Leader>c :MBEClose<cr>
+    map <Leader>t :MBEToggle<cr>
+    noremap <C-n> :MBEbn<CR>
+    noremap <C-p> :MBEbp<CR>
+    noremap <C-d> :MBEbd<CR>
 
 " }
 
