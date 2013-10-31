@@ -72,7 +72,6 @@
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
-    Bundle 'airblade/vim-gitgutter'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
     Bundle 'LargeFile'
