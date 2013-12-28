@@ -119,6 +119,7 @@
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
     au Filetype javascript setlocal sts=4 sw=4 foldmethod=marker
     au Filetype html setlocal sts=2 sw=2
+    au Filetype htmldjango setlocal sts=2 sw=2
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
