@@ -69,15 +69,13 @@
     Bundle 'gmarik/vundle'
 
     " Bundles
-    Bundle 'Lokaltog/vim-powerline'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
     Bundle 'LargeFile'
-    "Bundle 'Lokaltog/vim-easymotion'
-    "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-    "Bundle 'tpope/vim-rails.git'
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'wakatime/vim-wakatime'
 " }
 
 " Backup, Swap, and View Files {
