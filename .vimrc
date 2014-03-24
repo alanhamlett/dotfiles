@@ -69,6 +69,7 @@
     Bundle 'gmarik/vundle'
 
     " Bundles
+    Bundle 'rking/ag.vim'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
     Bundle 'tpope/vim-fugitive'
