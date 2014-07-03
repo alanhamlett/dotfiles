@@ -76,6 +76,7 @@
     Bundle 'sjl/gundo.vim'
     Bundle 'alanhamlett/vim-jinja'
     Bundle 'pangloss/vim-javascript'
+    Bundle 'genoma/vim-less'
     Bundle 'LargeFile'
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'wakatime/vim-wakatime'
