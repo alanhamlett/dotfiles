@@ -74,6 +74,8 @@
     Bundle 'fholgado/minibufexpl.vim'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
+    Bundle 'alanhamlett/vim-jinja'
+    Bundle 'pangloss/vim-javascript'
     Bundle 'LargeFile'
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'wakatime/vim-wakatime'
@@ -117,10 +119,17 @@
     set foldenable " auto fold code
     set foldmarker={,} " fold C style blocks
     set foldmethod=indent " fold using indentions by default
+
+    " Filetype Specific Indent Settings
+    au Filetype javascript setlocal sts=4 sw=4 foldmethod=marker nocindent smartindent
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
-    au Filetype javascript setlocal sts=4 sw=4 foldmethod=marker
-    au Filetype html setlocal sts=2 sw=2
-    au Filetype htmldjango setlocal sts=2 sw=2
+    au Filetype html setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype htmldjango setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype htmljinja setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype css setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype less setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype scss setlocal sts=2 sw=2 nocindent smartindent
+
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
