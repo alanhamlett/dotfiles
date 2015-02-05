@@ -69,6 +69,7 @@
     Bundle 'gmarik/vundle'
 
     " Bundles
+    Bundle 'kevinw/pyflakes-vim'
     Bundle 'rking/ag.vim'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
@@ -103,6 +104,7 @@
 
     " Turn off syntax highlighting for long lines
     set synmaxcol=600
+    let g:LargeFile=10
     
     " language specific word dividers
     au FileType perl set iskeyword+=@-@,$,%
@@ -219,4 +221,3 @@
     noremap <C-d> :MBEbd<CR>
 
 " }
-
