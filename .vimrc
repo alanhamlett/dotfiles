@@ -102,6 +102,7 @@
     let g:pymode_lint_checkers = ['pyflakes']
     let g:pymode_lint_signs = 1
     let g:pymode_lint_cwindow = 1
+    let g:pymode_rope = 0
     filetype on " be aware of file types
     filetype plugin on " load plugin files per filetype
     filetype indent on " load indent files per filetype
