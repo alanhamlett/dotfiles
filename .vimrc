@@ -69,7 +69,7 @@
     Bundle 'gmarik/vundle'
 
     " Bundles
-    Bundle 'kevinw/pyflakes-vim'
+    Bundle 'klen/python-mode'
     Bundle 'rking/ag.vim'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'fholgado/minibufexpl.vim'
@@ -97,6 +97,11 @@
 " }
 
 " File Syntax and Folding {
+    let g:pymode_folding = 0
+    let g:pymode_lint = 1
+    let g:pymode_lint_checkers = ['pyflakes']
+    let g:pymode_lint_signs = 1
+    let g:pymode_lint_cwindow = 1
     filetype on " be aware of file types
     filetype plugin on " load plugin files per filetype
     filetype indent on " load indent files per filetype
