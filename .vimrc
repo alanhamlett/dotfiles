@@ -128,6 +128,7 @@
     set foldenable " auto fold code
     set foldmarker={,} " fold C style blocks
     set foldmethod=indent " fold using indentions by default
+    au BufNewFile,BufReadPost *.md set filetype=markdown
 
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=4 sw=4 foldmethod=marker nocindent smartindent
