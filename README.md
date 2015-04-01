@@ -1,13 +1,13 @@
 Alan's Vim Configuration File
 =============================
 
-Use my [.vimrc config file](https://github.com/alanhamlett/Alan-vimrc/blob/master/.vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
+Use my [.vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/.vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
 
 Quick Install Commands
 ---------------------------
 
-    git clone git://github.com/alanhamlett/Alan-vimrc.git
-    ln -sf $PWD/Alan-vimrc/.vimrc $HOME/
+    git clone git://github.com/alanhamlett/dotfiles.git
+    ln -sf $PWD/dotfiles/.vimrc $HOME/
     git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
     vim +BundleInstall +qall
 
@@ -34,15 +34,15 @@ Plugins Included
 Screenshot
 ----------
 
-![VimScreenShot](https://github.com/alanhamlett/Alan-vimrc/raw/master/images/VimScreenShot.png)
+![VimScreenShot](https://github.com/alanhamlett/dotfiles/raw/master/images/VimScreenShot.png)
 
 Installation
 ------------
 
-### Download and install my [.vimrc](https://github.com/alanhamlett/Alan-vimrc/raw/master/.vimrc) file:
+### Download and install my [.vimrc](https://github.com/alanhamlett/dotfiles/raw/master/.vimrc) file:
 
-    git clone git://github.com/alanhamlett/Alan-vimrc.git
-    ln -sf $PWD/Alan-vimrc/.vimrc $HOME/
+    git clone git://github.com/alanhamlett/dotfiles.git
+    ln -sf $PWD/dotfiles/.vimrc $HOME/
 
 ### Download and install [Vundle](https://github.com/gmarik/vundle#about), the vim plugin manager:
 

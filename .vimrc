@@ -1,6 +1,7 @@
 ""
 "" Vim Configuration
 ""  Author: Alan Hamlett <alan.hamlett@gmail.com>
+""  Url: https://github.com/alanhamlett/dotfiles
 ""
 
 "" Cheat Sheet
