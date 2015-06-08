@@ -54,7 +54,7 @@ Installation
 
 ### Use a font patched for airline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
 
-    [Full list of fonts](https://github.com/powerline/fonts)
+[Full list of fonts](https://github.com/powerline/fonts)
 
 ### Install the solarized color palette in your terminal:
 
