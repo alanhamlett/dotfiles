@@ -80,7 +80,7 @@
     Bundle 'pangloss/vim-javascript'
     Bundle 'genoma/vim-less'
     Bundle 'LargeFile'
-    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'bling/vim-airline'
     Bundle 'wakatime/vim-wakatime'
 " }
 
@@ -132,7 +132,7 @@
     au BufNewFile,BufReadPost *.md set filetype=markdown
 
     " Filetype Specific Indent Settings
-    au Filetype javascript setlocal sts=4 sw=4 foldmethod=marker nocindent smartindent
+    au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
     au Filetype html setlocal sts=2 sw=2 nocindent smartindent
     au Filetype htmldjango setlocal sts=2 sw=2 nocindent smartindent
@@ -180,6 +180,9 @@
         " Fix background color for vim-gitgutter
         highlight SignColumn ctermbg=NONE
     endif
+
+    " use powerline fonts for airline
+    let g:airline_powerline_fonts = 1
 " }
 
 " Key Mappings {

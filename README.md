@@ -25,7 +25,7 @@ Plugins Included
 ----------------
 
 * [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [Lokaltog/vim-powerline](https://github.com/Lokaltog/vim-powerline#screenshots)
+* [bling/vim-airline](https://github.com/bling/vim-airline)
 * [fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim#features-overview)
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive#fugitivevim)
 * [sjl/gundo.vim](https://github.com/sjl/gundo.vim)
@@ -52,9 +52,9 @@ Installation
 
     vim +BundleInstall +qall
 
-### Use a font that's easy on your eyes like the free [Anonymous Pro](http://www.ms-studio.com/FontSales/anonymouspro.html) or Consolas:
+### Use a font patched for airline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
 
-    sudo apt-get install fonts-inconsolata
+    [Full list of fonts](https://github.com/powerline/fonts)
 
 ### Install the solarized color palette in your terminal:
 
