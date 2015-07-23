@@ -223,12 +223,6 @@
     " fix syntax highlighting for current buffer by pressing CTRL and s
     noremap <C-s> :syntax sync fromstart
 
-    " easier cursor navigation between split windows using CTRL and h,j,k, or l
-    noremap <C-h> <C-w>h
-    noremap <C-j> <C-w>j
-    noremap <C-k> <C-w>k
-    noremap <C-l> <C-w>l
-
     " Left/Right keys move towards the next/prev fold marker
     noremap <left> zk
     noremap <right> zj
@@ -247,12 +241,17 @@
     " Show syntax group for character under cursor by pressing CTRL SHIFT p
     noremap <C-S-P> :call SyntaxAttr()<CR>
 
+    " Open ctrlp.vim with Ctrl-f
+    "let g:ctrlp_map = '<c-f>'
+
     " Set MiniBufExpl Mappings
     map <Leader>e :MBEOpen<cr>
     map <Leader>c :MBEClose<cr>
     map <Leader>t :MBEToggle<cr>
-    noremap <C-n> :MBEbn<CR>
-    noremap <C-p> :MBEbp<CR>
+    noremap <C-h> :MBEbp<CR>
+    noremap <C-j> :MBEbp<CR>
+    noremap <C-k> :MBEbn<CR>
+    noremap <C-l> :MBEbn<CR>
     noremap <C-d> :MBEbd<CR>
 
     " Open NERDTree with Ctrl+n
