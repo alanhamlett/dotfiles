@@ -33,11 +33,9 @@ Plugins Included
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) - CamelCase motion through words
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file tree explorer plugin
 * [WakaTime](https://github.com/wakatime/vim-wakatime) - automatic time tracking and metrics about your programming
-* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - code completion
 * [Expand-Region](https://github.com/terryma/vim-expand-region) - visually select increasingly larger regions of text
 * [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file finder
 * [Surround](https://github.com/tpope/vim-surround) - quoting/parenthesizing made simple
-* [Syntastic](https://github.com/scrooloose/syntastic) - syntax checking
 * [Python-Mode](https://github.com/klen/python-mode) - detect runtime errors in Python code
 
 Screenshot

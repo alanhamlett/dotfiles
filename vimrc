@@ -88,7 +88,6 @@
     Plugin 'bling/vim-airline'
     Plugin 'scrooloose/nerdtree'
     Plugin 'wakatime/vim-wakatime'
-    Plugin 'Valloric/YouCompleteMe'
     Plugin 'terryma/vim-expand-region'
     Plugin 'elzr/vim-json'
     Plugin 'othree/javascript-libraries-syntax.vim'
@@ -96,7 +95,8 @@
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
-    Plugin 'scrooloose/syntastic'
+    "Plugin 'scrooloose/syntastic'
+    "Plugin 'davidhalter/jedi-vim'
 
 
     " All of your Plugins must be added before the following line
@@ -130,8 +130,11 @@
     let g:pymode_lint_checkers = ['pyflakes']
     let g:pymode_lint_signs = 1
     let g:pymode_lint_cwindow = 1
+    let g:pymode_rope_completion = 0
     let g:pymode_rope = 0
     syntax on " enable syntax highlighting in Vim5 and newer
+
+    let g:ycm_filetype_whitelist = { 'python':1 }
 
     " Turn off syntax highlighting for long lines
     set synmaxcol=600
@@ -242,7 +245,7 @@
     noremap <C-S-P> :call SyntaxAttr()<CR>
 
     " Open ctrlp.vim with Ctrl-f
-    "let g:ctrlp_map = '<c-f>'
+    let g:ctrlp_map = '<c-f>'
 
     " Set MiniBufExpl Mappings
     map <Leader>e :MBEOpen<cr>
@@ -256,10 +259,5 @@
 
     " Open NERDTree with Ctrl+n
     map <C-n> :NERDTreeToggle<CR>
-
-    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " }
