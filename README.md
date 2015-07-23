@@ -24,12 +24,21 @@ Key Features
 Plugins Included
 ----------------
 
-* [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [bling/vim-airline](https://github.com/bling/vim-airline)
-* [fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim#features-overview)
-* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive#fugitivevim)
-* [sjl/gundo.vim](https://github.com/sjl/gundo.vim)
-* [LargeFile](http://vim.sourceforge.net/scripts/script.php?script_id=1506)
+* [Solarized Color Scheme](https://github.com/altercation/vim-colors-solarized) - colorscheme for the vim text editor
+* [Airline](https://github.com/bling/vim-airline) - Lean & mean status/tabline for vim
+* [Mini Buffer Explorer](https://github.com/fholgado/minibufexpl.vim#features-overview) - Elegant tab bar showing open files
+* [Fugitive](https://github.com/tpope/vim-fugitive#fugitivevim) - the best Git wrapper of all time
+* [Gundo](https://github.com/sjl/gundo.vim) - plugin to visualize your Vim undo tree
+* [LargeFile](http://vim.sourceforge.net/scripts/script.php?script_id=1506) - edit large files quickly
+* [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) - CamelCase motion through words
+* [NERDTree](https://github.com/scrooloose/nerdtree) - file tree explorer plugin
+* [WakaTime](https://github.com/wakatime/vim-wakatime) - automatic time tracking and metrics about your programming
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - code completion
+* [Expand-Region](https://github.com/terryma/vim-expand-region) - visually select increasingly larger regions of text
+* [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file finder
+* [Surround](https://github.com/tpope/vim-surround) - quoting/parenthesizing made simple
+* [Syntastic](https://github.com/scrooloose/syntastic) - syntax checking
+* [Python-Mode](https://github.com/klen/python-mode) - detect runtime errors in Python code
 
 Screenshot
 ----------
