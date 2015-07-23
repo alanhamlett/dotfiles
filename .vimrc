@@ -17,9 +17,9 @@
 ""      zk - Jump to end of previous fold
 ""      set foldlevel=N - Close all folds at level N
 ""  Vundle:
-""      :BundleList          - list configured bundles
-""      :BundleInstall       - install bundles
-""      :BundleUpdate        - update bundles
+""      :PluginList          - list configured bundles
+""      :PluginInstall       - install bundles
+""      :PluginUpdate        - update bundles
 ""      :h vundle            - more vundle help
 ""  Window Navigation:
 ""      CTRL-h - Move cursor to window left of current one
@@ -60,41 +60,68 @@
     autocmd FileType c,cpp,java,javascript,perl,php,ruby,python,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 " }
 
-" Vundle Plugin Manager {
-    "filetype on " must set to on first for MacOSX
-    "filetype off " Vundle might need this
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+" Plugins {
+    filetype off                  " required
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    " alternatively, pass a path where Vundle should install plugins
+    "call vundle#begin('~/some/path/here')
 
     " let Vundle manage Vundle
-    Bundle 'gmarik/vundle'
+    Plugin 'gmarik/Vundle.vim'
 
-    " Bundles
-    Bundle 'klen/python-mode'
-    Bundle 'rking/ag.vim'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'fholgado/minibufexpl.vim'
-    Bundle 'tpope/vim-fugitive'
-    Bundle 'sjl/gundo.vim'
-    Bundle 'alanhamlett/vim-jinja'
-    Bundle 'pangloss/vim-javascript'
-    Bundle 'genoma/vim-less'
-    Bundle 'LargeFile'
-    Bundle 'bling/vim-airline'
-    Bundle 'wakatime/vim-wakatime'
+    " Plugins
+    Plugin 'klen/python-mode'
+    Plugin 'rking/ag.vim'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'fholgado/minibufexpl.vim'
+    Plugin 'bkad/CamelCaseMotion'
+    Plugin 'tmhedberg/matchit'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'sjl/gundo.vim'
+    Plugin 'alanhamlett/vim-jinja'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'genoma/vim-less'
+    Plugin 'LargeFile'
+    Plugin 'bling/vim-airline'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'wakatime/vim-wakatime'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'terryma/vim-expand-region'
+    Plugin 'elzr/vim-json'
+    Plugin 'othree/javascript-libraries-syntax.vim'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-surround'
+    Plugin 'scrooloose/syntastic'
+
+
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+
+    " Brief help
+    " :PluginList       - lists configured plugins
+    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
 " }
 
 " Backup, Swap, and View Files {
     " Creating directories if they don't exist
-    silent execute '!mkdir -p $HOME/.vimbackup'
-    silent execute '!mkdir -p $HOME/.vimswap'
-    silent execute '!mkdir -p $HOME/.vimviews'
+    silent execute '!mkdir -p $HOME/.vim/.backups'
+    silent execute '!mkdir -p $HOME/.vim/.swaps'
+    silent execute '!mkdir -p $HOME/.vim/.views'
 
     " Store backups in $HOME to keep the directory tree clean
     set backup
-    set backupdir=$HOME/.vimbackup/
-    set directory=$HOME/.vimswap/
-    set viewdir=$HOME/.vimviews/
+    set backupdir=$HOME/.vim/.backups/
+    set directory=$HOME/.vim/.swaps/
+    set viewdir=$HOME/.vim/.views/
 " }
 
 " File Syntax and Folding {
@@ -104,9 +131,6 @@
     let g:pymode_lint_signs = 1
     let g:pymode_lint_cwindow = 1
     let g:pymode_rope = 0
-    filetype on " be aware of file types
-    filetype plugin on " load plugin files per filetype
-    filetype indent on " load indent files per filetype
     syntax on " enable syntax highlighting in Vim5 and newer
 
     " Turn off syntax highlighting for long lines
@@ -230,5 +254,13 @@
     noremap <C-n> :MBEbn<CR>
     noremap <C-p> :MBEbp<CR>
     noremap <C-d> :MBEbd<CR>
+
+    " Open NERDTree with Ctrl+n
+    map <C-n> :NERDTreeToggle<CR>
+
+    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " }
