@@ -245,19 +245,25 @@
     noremap <C-S-P> :call SyntaxAttr()<CR>
 
     " Open ctrlp.vim with Ctrl-f
-    let g:ctrlp_map = '<c-f>'
+    let g:ctrlp_map = '<C-f>'
+
+    " Open NERDTree with Ctrl+g
+    map <C-g> :NERDTreeToggle<CR>
 
     " Set MiniBufExpl Mappings
     map <Leader>e :MBEOpen<cr>
     map <Leader>c :MBEClose<cr>
     map <Leader>t :MBEToggle<cr>
-    noremap <C-h> :MBEbp<CR>
-    noremap <C-j> :MBEbp<CR>
-    noremap <C-k> :MBEbn<CR>
-    noremap <C-l> :MBEbn<CR>
+    " Previous buffer in tab list with Ctrl+p
+    noremap <C-p> :MBEbp<CR>
+    " Next buffer in tab list with Ctrl+n
+    noremap <C-n> :MBEbn<CR>
     noremap <C-d> :MBEbd<CR>
 
-    " Open NERDTree with Ctrl+n
-    map <C-n> :NERDTreeToggle<CR>
+    " easier cursor navigation between split windows using CTRL and h,j,k, or l
+    noremap <C-h> <C-w>h
+    noremap <C-j> <C-w>j
+    noremap <C-k> <C-w>k
+    noremap <C-l> <C-w>l
 
 " }
