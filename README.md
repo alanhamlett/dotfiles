@@ -7,9 +7,9 @@ Quick Install Commands
 ---------------------------
 
     git clone git://github.com/alanhamlett/dotfiles.git
-    ln -sf $PWD/dotfiles/vimrc $HOME/
-    git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
-    vim +BundleInstall +qall
+    ln -sf $PWD/dotfiles/vimrc $HOME/.vimrc
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 
 Key Features
 ------------
@@ -49,15 +49,15 @@ Installation
 ### Download and install my [vimrc](https://github.com/alanhamlett/dotfiles/raw/master/vimrc) file:
 
     git clone git://github.com/alanhamlett/dotfiles.git
-    ln -sf $PWD/dotfiles/vimrc $HOME/
+    ln -sf $PWD/dotfiles/vimrc $HOME/.vimrc
 
 ### Download and install [Vundle](https://github.com/gmarik/vundle#about), the vim plugin manager:
 
-    git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ### Install the Vim plugins using Vundle:
 
-    vim +BundleInstall +qall
+    vim +PluginInstall +qall
 
 ### Use a font patched for airline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
 
