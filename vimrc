@@ -43,7 +43,6 @@
     set nocompatible " explicitly get out of vi-compatible mode
     set encoding=utf-8
     set noexrc " don't use local version of .(g)vimrc, .exrc
-    set clipboard+=unnamed " share system clipboard
     set showcmd " display incomplete commands
     set hidden " allow switching buffers without saving changes to file
     set noerrorbells " don't make beep noises
@@ -144,6 +143,9 @@
     au FileType perl set iskeyword+=@-@,$,%
     au FileType javascript set iskeyword+=$
 
+    " disable json quote concealing
+    let g:vim_json_syntax_conceal = 0
+
     au BufEnter * :syntax sync fromstart " most accurate syntax highlighting
     let perl_extended_vars=1 " highlight Perl vars inside strings
     filetype plugin indent on " load filetype plugins/indent settings
@@ -160,6 +162,7 @@
 
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
+    au Filetype coffee setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
     au Filetype html setlocal sts=2 sw=2 nocindent smartindent
     au Filetype htmldjango setlocal sts=2 sw=2 nocindent smartindent
