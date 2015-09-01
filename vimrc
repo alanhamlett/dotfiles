@@ -162,7 +162,8 @@
 
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
-    au Filetype coffee setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
+    au Filetype coffee setlocal sts=2 sw=2
+    au Filetype ruby setlocal sts=2 sw=2
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
     au Filetype html setlocal sts=2 sw=2 nocindent smartindent
     au Filetype htmldjango setlocal sts=2 sw=2 nocindent smartindent
