@@ -271,4 +271,7 @@
     noremap <C-k> <C-w>k
     noremap <C-l> <C-w>l
 
+    " Turn On CamelCaseMotion
+    call camelcasemotion#CreateMotionMappings(',')
+
 " }
