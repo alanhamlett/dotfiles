@@ -152,8 +152,8 @@
     filetype plugin indent on " load filetype plugins/indent settings
     set fileformats=unix,mac,dos " support fileformats in this order
     set expandtab " Use spaces for indenting
-    set shiftwidth=4 " Number of spaces per indent
-    set softtabstop=4 " Number of spaces per tab
+    set shiftwidth=2 " Number of spaces per indent
+    set softtabstop=2 " Number of spaces per tab
     set tabstop=4 " Number of spaces in actual tabs
     set autoindent " When pressing Enter, cursor gets indented to same column as previous line
     set foldenable " auto fold code
@@ -164,6 +164,7 @@
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
     au Filetype coffee setlocal sts=2 sw=2
+    au Filetype python setlocal sts=4 sw=4
     au Filetype ruby setlocal sts=2 sw=2
     au FileType perl setlocal sts=4 sw=4 foldmethod=marker
     au Filetype html setlocal sts=2 sw=2 nocindent smartindent
