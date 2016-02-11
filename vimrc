@@ -95,6 +95,7 @@
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
     Plugin 'leafgarland/typescript-vim'
+    Plugin 'wavded/vim-stylus'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
