@@ -1,0 +1,29 @@
+[core]
+    editor = /usr/local/bin/vim
+    pager = diff-highlight | diff-so-fancy | less -r
+[pull]
+    rebase = true
+[alias]
+    st = status
+    ci = commit -a
+[push]
+    default = simple
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
+[color]
+    ui = always
+[color "diff"]
+    meta = yellow bold
+    commit = green bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[include]
+    path = ~/.gitconfig.local
