@@ -174,6 +174,7 @@
     au Filetype css setlocal sts=2 sw=2 nocindent smartindent
     au Filetype less setlocal sts=2 sw=2 nocindent smartindent
     au Filetype scss setlocal sts=2 sw=2 nocindent smartindent
+    au Filetype c setlocal sts=2 sw=2 nocindent smartindent
 
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
