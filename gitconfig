@@ -11,3 +11,5 @@
     ui = always
 [include]
     path = ~/.gitconfig.local
+[user]
+	signingkey = 71A9FECC
