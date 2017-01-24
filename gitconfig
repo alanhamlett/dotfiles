@@ -12,4 +12,8 @@
 [include]
     path = ~/.gitconfig.local
 [user]
+    name = Alan Hamlett
+    email = alan.hamlett@gmail.com
 	signingkey = 71A9FECC
+[github]
+	user = alanhamlett
