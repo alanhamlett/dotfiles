@@ -46,6 +46,7 @@
     set showcmd " display incomplete commands
     set hidden " allow switching buffers without saving changes to file
     set noerrorbells " don't make beep noises
+    set backspace=indent,eol,start " allow backspacing indentation
     "set autochdir " switch to directory containing current file
     "set mouse=a " use mouse everywhere
 
@@ -56,7 +57,7 @@
         %s/\s\+$//e
         call cursor(l, c)
     endfun
-    autocmd FileType c,cpp,java,javascript,perl,php,ruby,python,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+    autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 " }
 
 " Plugins {
@@ -86,16 +87,19 @@
     Plugin 'LargeFile'
     Plugin 'bling/vim-airline'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'Xuyuanp/nerdtree-git-plugin'
     Plugin 'wakatime/vim-wakatime'
     Plugin 'terryma/vim-expand-region'
     Plugin 'elzr/vim-json'
     Plugin 'othree/javascript-libraries-syntax.vim'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim' " open fuzzy file finder with CTRL + f
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
     Plugin 'leafgarland/typescript-vim'
     Plugin 'wavded/vim-stylus'
+    Plugin 'mattn/webapi-vim' " required for gist-vim
+    Plugin 'mattn/gist-vim' " post current buffer with :Gist
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
@@ -140,7 +144,7 @@
     " Turn off syntax highlighting for long lines
     set synmaxcol=600
     let g:LargeFile=10
-    
+
     " language specific word dividers
     au FileType perl set iskeyword+=@-@,$,%
     au FileType javascript set iskeyword+=$
@@ -248,7 +252,7 @@
 
     " Pressing F5 toggles Gundo
     nnoremap <F5> :GundoToggle<CR>
-    
+
     " Show syntax group for character under cursor by pressing CTRL SHIFT p
     noremap <C-S-P> :call SyntaxAttr()<CR>
 

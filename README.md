@@ -28,13 +28,15 @@ Plugins Included
 * [Airline](https://github.com/bling/vim-airline) - Lean & mean status/tabline for vim
 * [Mini Buffer Explorer](https://github.com/fholgado/minibufexpl.vim#features-overview) - Elegant tab bar showing open files
 * [Fugitive](https://github.com/tpope/vim-fugitive#fugitivevim) - the best Git wrapper of all time
-* [Gundo](https://github.com/sjl/gundo.vim) - plugin to visualize your Vim undo tree
+* [gist-vim](https://github.com/mattn/gist-vim) - post current buffer(s) as a gist
+* [Gundo](https://github.com/sjl/gundo.vim) - visualize your Vim undo tree
 * [LargeFile](http://vim.sourceforge.net/scripts/script.php?script_id=1506) - edit large files quickly
 * [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) - CamelCase motion through words
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file tree explorer plugin
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - show git status for files in NERDTree
 * [WakaTime](https://github.com/wakatime/vim-wakatime) - automatic time tracking and metrics about your programming
 * [Expand-Region](https://github.com/terryma/vim-expand-region) - visually select increasingly larger regions of text
-* [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file finder
+* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) - fuzzy file finder, alternative to `:e` or NERDTree. Open with `CL` `f`
 * [Surround](https://github.com/tpope/vim-surround) - quoting/parenthesizing made simple
 * [Python-Mode](https://github.com/klen/python-mode) - detect runtime errors in Python code
 
