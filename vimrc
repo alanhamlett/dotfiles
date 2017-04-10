@@ -201,6 +201,7 @@
     " Highlight column 80 to help with line wrapping
     if exists('+colorcolumn')
         set colorcolumn=80
+        au Filetype ruby setlocal colorcolumn=100
     endif
 
     " restore cursor position when reopening files
