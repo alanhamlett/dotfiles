@@ -16,11 +16,10 @@
 ""      zj - Jump to start of next fold
 ""      zk - Jump to end of previous fold
 ""      set foldlevel=N - Close all folds at level N
-""  Vundle:
+""  Vundle Plugin Manager:
 ""      :PluginList          - list configured bundles
 ""      :PluginInstall       - install bundles
 ""      :PluginUpdate        - update bundles
-""      :h vundle            - more vundle help
 ""  Window Navigation:
 ""      CTRL-h - Move cursor to window left of current one
 ""      CTRL-j - Move cursor to window below current one
@@ -107,6 +106,7 @@
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
     Plugin 'ludovicchabant/vim-gutentags'
+    Plugin 'lifepillar/vim-mucomplete'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
@@ -228,6 +228,16 @@
 
     " use powerline fonts for airline
     let g:airline_powerline_fonts = 1
+
+    " Enable mucomplete
+    set completeopt+=menuone
+    set completeopt+=noinsert
+    inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+    inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+    inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+    let g:mucomplete#no_mappings = 1
+    let g:mucomplete#enable_auto_at_startup = 1
+
 " }
 
 " {
@@ -291,16 +301,5 @@
 
     " Turn On CamelCaseMotion
     call camelcasemotion#CreateMotionMappings(',')
-
-    " Bind AutoComplete to TAB
-    function! InsertTabWrapper()
-      let col = col('.') - 1
-      if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-      else
-        return "\<c-p>"
-      endif
-    endfunction
-    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " }
