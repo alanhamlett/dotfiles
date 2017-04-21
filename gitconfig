@@ -1,19 +1,21 @@
-[core]
-    editor = /usr/local/bin/vim
-[pull]
-    rebase = true
 [alias]
-    st = status
-    ci = commit -a
+  st = status
+  ci = commit -a
+  pushf = push --force-with-lease
+[core]
+  precomposeunicode = true
+  editor = /usr/local/bin/vim
+[pull]
+  rebase = true
 [push]
-    default = simple
+  default = current
 [color]
-    ui = always
+  ui = always
 [include]
-    path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [user]
-    name = Alan Hamlett
-    email = alan.hamlett@gmail.com
-	signingkey = 71A9FECC
+  name = Alan Hamlett
+  email = alan.hamlett@gmail.com
+  signingkey = 71A9FECC
 [github]
-	user = alanhamlett
+  user = alanhamlett
