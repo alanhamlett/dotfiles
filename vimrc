@@ -39,7 +39,9 @@
 ""      #-CTRL-6 - switch to buffer number #
 ""      :b # - switch to buffer number #
 
-" General {
+" {
+    " General
+
     set nocompatible " explicitly get out of vi-compatible mode
     set encoding=utf-8
     set noexrc " don't use local version of .(g)vimrc, .exrc
@@ -60,24 +62,28 @@
     autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 " }
 
-" Plugins {
-    filetype off                  " required
+" {
+    " Plugins
 
-    " set the runtime path to include Vundle and initialize
+    " Commands to Manage Plugins
+    " :PluginList       - lists configured plugins
+    " :PluginInstall    - installs any new plugins; append `!` to update or just :PluginUpdate
+    " :PluginUpdate     - updates plugins to latest versions
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+    filetype off " Disable temporarily while configuring Vundle
+
+    " Initialize Vundle
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
-    " alternatively, pass a path where Vundle should install plugins
-    "call vundle#begin('~/some/path/here')
+    Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle
 
-    " let Vundle manage Vundle
-    Plugin 'gmarik/Vundle.vim'
-
-    " Plugins
+    Plugin 'bkad/CamelCaseMotion'
     Plugin 'klen/python-mode'
     Plugin 'rking/ag.vim'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'fholgado/minibufexpl.vim'
-    Plugin 'bkad/CamelCaseMotion'
     Plugin 'tmhedberg/matchit'
     Plugin 'tpope/vim-fugitive'
     Plugin 'sjl/gundo.vim'
@@ -85,7 +91,7 @@
     Plugin 'pangloss/vim-javascript'
     Plugin 'genoma/vim-less'
     Plugin 'LargeFile'
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
     Plugin 'scrooloose/nerdtree'
     Plugin 'Xuyuanp/nerdtree-git-plugin'
     Plugin 'wakatime/vim-wakatime'
@@ -100,23 +106,17 @@
     Plugin 'wavded/vim-stylus'
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
+    Plugin 'ludovicchabant/vim-gutentags'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
-
-    " All of your Plugins must be added before the following line
-    call vundle#end()            " required
-    filetype plugin indent on    " required
-
-    " Brief help
-    " :PluginList       - lists configured plugins
-    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
+    call vundle#end()
+    filetype plugin indent on " Re-enable after configuring Vundle
 " }
 
-" Backup, Swap, and View Files {
+" {
+    " Backup, Swap, and View Files
+
     " Creating directories if they don't exist
     silent execute '!mkdir -p $HOME/.vim/.backups'
     silent execute '!mkdir -p $HOME/.vim/.swaps'
@@ -129,7 +129,9 @@
     set viewdir=$HOME/.vim/.views/
 " }
 
-" File Syntax and Folding {
+" {
+    " File Syntax and Folding
+
     let g:pymode_folding = 0
     let g:pymode_lint = 1
     let g:pymode_lint_checkers = ['pyflakes']
@@ -186,7 +188,9 @@
     set nowrap " don't wrap long lines
 " }
 
-" UI {
+" {
+    " UI
+
     set number " Show line numbers
     set showmatch " Highlight matching braces/parents/brackets
     set incsearch " find as you type search
@@ -226,7 +230,9 @@
     let g:airline_powerline_fonts = 1
 " }
 
-" Key Mappings {
+" {
+    " Key Mappings
+
     " pressing v escapes from visual mode
     vnoremap <v> <Esc>
 
@@ -261,8 +267,11 @@
     " Open ctrlp.vim with Ctrl-f
     let g:ctrlp_map = '<C-f>'
 
-    " Open NERDTree with Ctrl+g
-    map <C-g> :NERDTreeToggle<CR>
+    " Open NERDTree with Ctrl+t
+    map <C-t> :NERDTreeToggle<CR>
+
+    " Go to definition with Ctrl+g
+    map <C-g> g]
 
     " Set MiniBufExpl Mappings
     map <Leader>e :MBEOpen<cr>
@@ -282,5 +291,16 @@
 
     " Turn On CamelCaseMotion
     call camelcasemotion#CreateMotionMappings(',')
+
+    " Bind AutoComplete to TAB
+    function! InsertTabWrapper()
+      let col = col('.') - 1
+      if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+      else
+        return "\<c-p>"
+      endif
+    endfunction
+    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " }

@@ -9,6 +9,8 @@ Quick Install Commands
     git clone git://github.com/alanhamlett/dotfiles.git
     ln -sf $PWD/dotfiles/vimrc $HOME/.vimrc
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    brew tap universal-ctags/universal-ctags
+    brew install --HEAD universal-ctags
     vim +PluginInstall +qall
 
 Key Features
