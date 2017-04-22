@@ -5,6 +5,10 @@
 ""
 
 "" Cheat Sheet
+""  Code Navigation:
+""      CTRL-g - Go to definition; Opens the file defining the current variable
+""      TAB - When pressed after a word, shows autocomplete within current file
+""      SPACE - Move current line front and center
 ""  Code Folding:
 ""      zR - Open all folds
 ""      zM - Close all folds
@@ -25,7 +29,7 @@
 ""      CTRL-j - Move cursor to window below current one
 ""      CTRL-k - Move cursor to window above current one
 ""      CTRL-l - Move cursor to window right of current one
-""  Buffer Navigation:
+""  Buffer Navigation: (Tab bar showing open files at top of Vim)
 ""      :e <file> - edit <file> in a new buffer
 ""      :ls - list current buffers
 ""      :b <part of file name> - switch to buffer with TAB completion
@@ -106,7 +110,6 @@
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
     Plugin 'ludovicchabant/vim-gutentags'
-    Plugin 'lifepillar/vim-mucomplete'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
@@ -187,6 +190,14 @@
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
     set nowrap " don't wrap long lines
+
+    " Color tabs red when used for indentation
+    function! ShowBadTabs()
+        highlight default BadTabs ctermbg=red guibg=red
+        au ColorScheme <buffer> highlight default BadTabs ctermbg=red guibg=red
+        match BadTabs /\s*\t\+/
+    endfunction
+    au BufWinEnter,WinEnter,FileType * call ShowBadTabs()
 " }
 
 " {
@@ -229,16 +240,6 @@
 
     " use powerline fonts for airline
     let g:airline_powerline_fonts = 1
-
-    " Enable mucomplete
-    set completeopt+=menuone
-    set completeopt+=noinsert
-    inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-    inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-    inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
-    let g:mucomplete#no_mappings = 1
-    let g:mucomplete#enable_auto_at_startup = 1
-
 " }
 
 " {
@@ -303,4 +304,14 @@
     " Turn On CamelCaseMotion
     call camelcasemotion#CreateMotionMappings(',')
 
+    " Bind AutoComplete to TAB
+    function! InsertTabWrapper()
+        let col = col('.') - 1
+        if !col || getline('.')[col - 1] !~ '\k'
+            return "\<tab>"
+        else
+            return "\<c-p>"
+        endif
+    endfunction
+    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }
