@@ -5,6 +5,7 @@
 [core]
   precomposeunicode = true
   editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore_global
 [pull]
   rebase = true
 [push]
