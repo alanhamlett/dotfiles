@@ -283,7 +283,7 @@
     map <C-t> :NERDTreeToggle<CR>
 
     " Go to definition with Ctrl+g
-    map <C-g> g]
+    map <C-g> <C-]>
 
     " Set MiniBufExpl Mappings
     map <Leader>e :MBEOpen<cr>
