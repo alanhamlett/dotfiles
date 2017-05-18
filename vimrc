@@ -92,6 +92,7 @@
     Plugin 'sjl/gundo.vim'
     Plugin 'alanhamlett/vim-jinja'
     Plugin 'pangloss/vim-javascript'
+    Plugin 'mxw/vim-jsx'
     Plugin 'genoma/vim-less'
     Plugin 'LargeFile'
     Plugin 'vim-airline/vim-airline'
@@ -147,7 +148,7 @@
     let g:ycm_filetype_whitelist = { 'python':1 }
 
     " Turn off syntax highlighting for long lines
-    set synmaxcol=600
+    set synmaxcol=900
     let g:LargeFile=10
 
     " language specific word dividers
