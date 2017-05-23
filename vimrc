@@ -241,6 +241,11 @@
 
     " use powerline fonts for airline
     let g:airline_powerline_fonts = 1
+
+    " Configure MiniBufExpl tab plugin
+    let g:miniBufExplBuffersNeeded = 1
+    let g:miniBufExplStatusLineText = ''
+
 " }
 
 " {
