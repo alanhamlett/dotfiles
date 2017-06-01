@@ -1,4 +1,6 @@
 # Tell RipGrep to skip searching these paths
 spec/
 tags
+tags.temp
+tags.lock
 tests/
