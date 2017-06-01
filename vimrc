@@ -220,6 +220,7 @@
     if exists('+colorcolumn')
         set colorcolumn=80
         au Filetype ruby setlocal colorcolumn=100
+        au Filetype javascript setlocal colorcolumn=100
     endif
 
     " restore cursor position when reopening files
