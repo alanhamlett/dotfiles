@@ -41,6 +41,9 @@
 ""      CTRL-6 - switch to previously used buffer
 ""      #-CTRL-6 - switch to buffer number #
 ""      :b # - switch to buffer number #
+""  Git:
+""      :Gbrowse - Open the current file in a web browser on GitHub or GHE
+""      :Gblame - Blame the current file in a sidebar
 
 " {
     " General
@@ -52,7 +55,6 @@
     set hidden " allow switching buffers without saving changes to file
     set noerrorbells " don't make beep noises
     set backspace=indent,eol,start " allow backspacing indentation
-    "set autochdir " switch to directory containing current file
     "set mouse=a " use mouse everywhere
 
     " remove whitespace from end of every line
@@ -63,6 +65,12 @@
         call cursor(l, c)
     endfun
     autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+
+    " More Vim configs in ~/.vimrc_local
+    let vimrclocal=expand("$HOME/.vimrc_local")
+    if filereadable(vimrclocal)
+        execute 'source ' . fnameescape(vimrclocal)
+    endif
 " }
 
 " {
@@ -89,6 +97,7 @@
     Plugin 'fholgado/minibufexpl.vim'
     Plugin 'tmhedberg/matchit'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-rhubarb'
     Plugin 'sjl/gundo.vim'
     Plugin 'alanhamlett/vim-jinja'
     Plugin 'pangloss/vim-javascript'
@@ -252,7 +261,6 @@
         let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
         let g:ctrlp_use_caching = 0
     endif
-
 " }
 
 " {
