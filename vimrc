@@ -59,13 +59,15 @@
 
     " remove whitespace from end of every line
     fun! <SID>StripTrailingWhitespace()
-        let l = line(".")
-        let c = col(".")
+        let s = @/
+        let l = line('.')
+        let c = col('.')
         call cursor(0, 0)
-        %s/\s\+$//ge
+        silent! %s/\s\+$//e
         call cursor(l, c)
+        let @/ = s
     endfun
-    autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+    autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
 
     " More Vim configs in ~/.vimrc_local
     let vimrclocal=expand("$HOME/.vimrc_local")
