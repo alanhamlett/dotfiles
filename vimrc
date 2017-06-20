@@ -61,7 +61,8 @@
     fun! <SID>StripTrailingWhitespace()
         let l = line(".")
         let c = col(".")
-        %s/\s\+$//e
+        call cursor(0, 0)
+        %s/\s\+$//ge
         call cursor(l, c)
     endfun
     autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
