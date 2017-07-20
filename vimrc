@@ -282,6 +282,17 @@
     " fix syntax highlighting for current buffer by pressing CTRL and s
     noremap <C-s> :syntax sync fromstart
 
+    " Pressing f + a number sets current fold level to that number
+    noremap f1 :set foldlevel=1<cr>
+    noremap f2 :set foldlevel=2<cr>
+    noremap f3 :set foldlevel=3<cr>
+    noremap f4 :set foldlevel=4<cr>
+    noremap f5 :set foldlevel=5<cr>
+    noremap f6 :set foldlevel=6<cr>
+    noremap f7 :set foldlevel=7<cr>
+    noremap f8 :set foldlevel=8<cr>
+    noremap f9 :set foldlevel=9<cr>
+
     " Left/Right keys move towards the next/prev fold marker
     noremap <left> zk
     noremap <right> zj
