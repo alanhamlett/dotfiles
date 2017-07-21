@@ -123,6 +123,7 @@
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
     Plugin 'ludovicchabant/vim-gutentags'
+    Plugin 'suan/vim-instant-markdown'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 

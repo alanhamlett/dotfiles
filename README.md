@@ -1,20 +1,19 @@
-Alan's Dotfiles 
-===============
+# Alan's Dotfiles
 
 Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
 
-Quick Install Commands
----------------------------
+
+## Installation
 
     git clone git://github.com/alanhamlett/dotfiles.git
     ln -sf $PWD/dotfiles/vimrc $HOME/.vimrc
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     brew tap universal-ctags/universal-ctags
     brew install --HEAD universal-ctags
+    npm -g install instant-markdown-d
     vim +PluginInstall +qall
 
-Key Features
-------------
+## Key Features
 
 * Code folding for bracket or indention based languages
 * Edit multiple files in tabs using minibufexpl plugin
@@ -23,8 +22,8 @@ Key Features
 * Common swp, backup, & view directories (No more ~ files left around)
 * Useful defaults (spaces instead of tabs, remove trailing newlines, etc.)
 
-Plugins Included
-----------------
+
+## Plugins Included
 
 * [Solarized Color Scheme](https://github.com/altercation/vim-colors-solarized) - colorscheme for the vim text editor
 * [Airline](https://github.com/bling/vim-airline) - Lean & mean status/tabline for vim
@@ -42,26 +41,13 @@ Plugins Included
 * [Surround](https://github.com/tpope/vim-surround) - quoting/parenthesizing made simple
 * [Python-Mode](https://github.com/klen/python-mode) - detect runtime errors in Python code
 
-Screenshot
-----------
+
+## Screenshot
 
 ![VimScreenShot](https://github.com/alanhamlett/dotfiles/raw/master/images/VimScreenShot.png)
 
-Installation
-------------
 
-### Download and install my [vimrc](https://github.com/alanhamlett/dotfiles/raw/master/vimrc) file:
-
-    git clone git://github.com/alanhamlett/dotfiles.git
-    ln -sf $PWD/dotfiles/vimrc $HOME/.vimrc
-
-### Download and install [Vundle](https://github.com/gmarik/vundle#about), the vim plugin manager:
-
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-### Install the Vim plugins using Vundle:
-
-    vim +PluginInstall +qall
+## Font and Color Theme
 
 ### Use a font patched for airline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
 
