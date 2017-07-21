@@ -284,6 +284,7 @@
     noremap <C-s> :syntax sync fromstart
 
     " Pressing f + a number sets current fold level to that number
+    noremap f0 :set foldlevel=0<cr>
     noremap f1 :set foldlevel=1<cr>
     noremap f2 :set foldlevel=2<cr>
     noremap f3 :set foldlevel=3<cr>
