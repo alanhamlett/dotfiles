@@ -124,6 +124,7 @@
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'suan/vim-instant-markdown'
+    Plugin 'galooshi/vim-import-js'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 

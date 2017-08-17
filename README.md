@@ -10,7 +10,7 @@ Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/v
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     brew tap universal-ctags/universal-ctags
     brew install --HEAD universal-ctags
-    npm -g install instant-markdown-d
+    npm -g install instant-markdown-d import-js
     vim +PluginInstall +qall
 
 ## Key Features
