@@ -11,6 +11,7 @@ Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/v
     brew tap universal-ctags/universal-ctags
     brew install --HEAD universal-ctags
     npm -g install instant-markdown-d import-js
+    sudo pip install flake8
     vim +PluginInstall +qall
 
 ## Key Features

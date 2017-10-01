@@ -94,7 +94,7 @@
     Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle
 
     Plugin 'bkad/CamelCaseMotion'
-    Plugin 'klen/python-mode'
+    Plugin 'nvie/vim-flake8'
     Plugin 'rking/ag.vim'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'fholgado/minibufexpl.vim'
@@ -150,13 +150,6 @@
 " {
     " File Syntax and Folding
 
-    let g:pymode_folding = 0
-    let g:pymode_lint = 1
-    let g:pymode_lint_checkers = ['pyflakes']
-    let g:pymode_lint_signs = 1
-    let g:pymode_lint_cwindow = 1
-    let g:pymode_rope_completion = 0
-    let g:pymode_rope = 0
     syntax on " enable syntax highlighting in Vim5 and newer
 
     let g:ycm_filetype_whitelist = { 'python':1 }
@@ -185,6 +178,9 @@
     set foldmarker={,} " fold C style blocks
     set foldmethod=indent " fold using indentions by default
     au BufNewFile,BufReadPost *.md set filetype=markdown
+
+    " run Flake8 check every write to a Python file
+    autocmd BufWritePost *.py call Flake8()
 
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
