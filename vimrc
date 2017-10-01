@@ -179,8 +179,14 @@
     set foldmethod=indent " fold using indentions by default
     au BufNewFile,BufReadPost *.md set filetype=markdown
 
-    " run Flake8 check every write to a Python file
+    " Run Flake8 check every write to a Python file
     autocmd BufWritePost *.py call Flake8()
+
+    " Customize Flake8 Checks
+    let g:flake8_show_in_file=1
+    let g:flake8_show_in_gutter=1
+    let g:flake8_pyflake_marker=''     " disable PyFlakes warnings
+    let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
 
     " Filetype Specific Indent Settings
     au Filetype javascript setlocal sts=2 sw=2 foldmethod=marker nocindent smartindent
