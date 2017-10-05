@@ -104,6 +104,7 @@
     Plugin 'sjl/gundo.vim'
     Plugin 'alanhamlett/vim-jinja'
     Plugin 'pangloss/vim-javascript'
+    Plugin 'prettier/vim-prettier'
     Plugin 'mxw/vim-jsx'
     Plugin 'genoma/vim-less'
     Plugin 'LargeFile'
@@ -215,6 +216,19 @@
         match BadTabs /\s*\t\+/
     endfunction
     au BufWinEnter,WinEnter,FileType * call ShowBadTabs()
+
+    " Configure prettier
+    let g:prettier#exec_cmd_async = 1
+    let g:prettier#config#print_width = 100
+    let g:prettier#config#semi = 'true'
+    let g:prettier#config#single_quote = 'true'
+    let g:prettier#config#bracket_spacing = 'true'
+    let g:prettier#config#bracket_spacing = 'true'
+    let g:prettier#config#jsx_bracket_same_line = 'false'
+    let g:prettier#config#trailing_comma = 'all'
+
+    " Run prettier before saving supported files
+    autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 " }
 
 " {

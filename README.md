@@ -14,6 +14,7 @@ Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/v
     sudo pip install flake8
     ln -sf $PWD/flake8 $HOME/.config/flake8
     vim +PluginInstall +qall
+    cd $HOME/.vim/bundle/vim-prettier; yarn install; cd $OLDPWD
 
 ## Key Features
 
