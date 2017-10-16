@@ -184,7 +184,7 @@
     autocmd BufWritePost *.py call Flake8()
 
     " Customize Flake8 Checks
-    let g:flake8_show_in_file=1
+    let g:flake8_show_in_file=0
     let g:flake8_show_in_gutter=1
     let g:flake8_pyflake_marker=''     " disable PyFlakes warnings
     let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
