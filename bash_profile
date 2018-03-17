@@ -21,7 +21,7 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-export RIPGREP_CONFIG_PATH="~/.ripgreprc"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Load bash aliases
 [[ -s "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
