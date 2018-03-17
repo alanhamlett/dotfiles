@@ -1,0 +1,3 @@
+--max-columns 150
+--smart-case
+-g '!*/static/libs/*'
