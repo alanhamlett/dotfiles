@@ -157,7 +157,7 @@
 
     " Turn off syntax highlighting for long lines
     set synmaxcol=900
-    let g:LargeFile=10
+    let g:LargeFile=20
 
     " language specific word dividers
     au FileType perl set iskeyword+=@-@,$,%
