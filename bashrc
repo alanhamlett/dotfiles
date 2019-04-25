@@ -31,7 +31,12 @@ find_git_branch() {
   fi
 }
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
-export PS1="\u@\h \w \$git_branch\$ "
+txtgrn="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')"
+txtcyn="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"
+txtpur="$(tput setaf 5 2>/dev/null || echo '\e[0;35m')"
+bakred="$(tput setab 1 2>/dev/null || echo '\e[41m')"
+txtrst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
+export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtrst\]\$ "
 export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
