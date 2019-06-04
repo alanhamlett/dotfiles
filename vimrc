@@ -93,6 +93,7 @@
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle
 
+    Plugin 'ciaranm/securemodelines'
     Plugin 'bkad/CamelCaseMotion'
     Plugin 'nvie/vim-flake8'
     Plugin 'rking/ag.vim'
