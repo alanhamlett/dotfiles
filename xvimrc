@@ -1,0 +1,7 @@
+set number
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set expandtab
+nnoremap <space> zvzz
