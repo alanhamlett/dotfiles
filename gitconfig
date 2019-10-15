@@ -12,11 +12,17 @@
   default = current
 [color]
   ui = always
-[include]
-  path = ~/.gitconfig.local
+[rerere]
+  enabled = true
 [user]
   name = Alan Hamlett
   email = alan.hamlett@gmail.com
   signingkey = 71A9FECC
 [github]
   user = alanhamlett
+[diff]
+  renameLimit = 0
+[pager]
+  branch = false
+[include]
+  path = ~/.gitconfig.local
