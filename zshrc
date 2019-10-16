@@ -34,7 +34,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 
-source "$HOME/.zsh_aliases"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 alias ll="ls -la"
 alias l="ls -la"
@@ -59,3 +59,5 @@ alias rebase="git rebase"
 alias reset="git reset"
 alias gdiff="git diff"
 alias log="git log"
+
+source "$HOME/.zsh_aliases"
