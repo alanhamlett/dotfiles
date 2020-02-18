@@ -36,28 +36,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-alias ll="ls -la"
-alias l="ls -la"
-alias vi=vim
-alias vim=/usr/local/bin/vim
-alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
-
-# git specific
-alias gitprune="git remote prune origin"
-alias rb='curbranch=`git rev-parse --abbrev-ref HEAD`; git checkout master && git pull && git checkout $curbranch && git rebase master'
-alias st="git status"
-alias p="git pull"
-alias push="git push"
-alias pushf="git push --force-with-lease"
-alias pushn="git push --no-verify"
-alias pushfn="git push --force-with-lease --no-verify"
-alias ci="git commit -a"
-alias co="git checkout"
-alias branch="git branch"
-alias stash="git stash"
-alias rebase="git rebase"
-alias reset="git reset"
-alias gdiff="git diff"
-alias log="git log"
-
 source "$HOME/.zsh_aliases"
