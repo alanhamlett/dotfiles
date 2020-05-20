@@ -416,7 +416,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/git/dotfiles/iTerm2</string>
+	<string>~/git/dotfiles</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -2040,7 +2040,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/user/git/dotfiles/iTerm2</string>
+	<string>/Users/user/git/dotfiles</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
