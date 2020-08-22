@@ -2,23 +2,51 @@ alias ll="ls -la"
 alias l="ls -la"
 alias vi=vim
 alias vim=/usr/local/bin/vim
-alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
+alias venv='. ./venv/bin/activate'
+alias venv3='. ./venv3/bin/activate'
+alias sql="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432"
+alias sqlk="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 kneady"
+alias sqlw="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 wakatime"
+alias sqli="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 integrations"
+alias sqlh="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 heartbeats"
+alias sqlr="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 refill"
+alias ag="ag --smart-case --ignore-dir build --ignore-dir datawarehouse --ignore-dir migrations --ignore-dir zxcvbn"
+alias htop="sudo /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop"
+alias rg="rg -S"
 
-# git specific
-alias gitprune="git remote prune origin"
-alias rb='curbranch=`git rev-parse --abbrev-ref HEAD`; git checkout master && git pull && git checkout $curbranch && git rebase master'
+alias clone="git clone"
 alias st="git status"
 alias p="git pull"
+alias pull="git pull"
+alias branch="git branch"
+alias co="git checkout"
+alias ci="git commit -a"
+alias gdiff="git diff"
+alias gd="git diff"
+alias stash="git stash"
 alias push="git push"
 alias pushf="git push --force-with-lease"
 alias pushn="git push --no-verify"
 alias pushfn="git push --force-with-lease --no-verify"
-alias ci="git commit -a"
-alias co="git checkout"
-alias branch="git branch"
-alias stash="git stash"
+alias log="git log"
 alias rebase="git rebase"
 alias reset="git reset"
-alias gdiff="git diff"
-alias gd="git diff"
-alias log="git log"
+alias remote="git remote -v"
+alias fetch="git fetch"
+alias gitprune="git remote prune origin"
+alias rb='curbranch=`git rev-parse --abbrev-ref HEAD`; git checkout master && git pull && git checkout $curbranch && git rebase master'
+
+alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
+
+alias redis_start="brew services start redis"
+alias redis_stop="brew services stop redis"
+
+# check which process is preventing machine from sleeping
+alias assertions="pmset -g assertions"
+
+# run vscode with proposed api support
+alias codeinsiders="code-insiders -n --enable-proposed-api WakaTime.vscode-wakatime"
+
+if [[ ! -a ~/.server_shortcuts ]]; then
+  source .server_shortcuts
+fi
