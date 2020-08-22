@@ -47,6 +47,6 @@ alias assertions="pmset -g assertions"
 # run vscode with proposed api support
 alias codeinsiders="code-insiders -n --enable-proposed-api WakaTime.vscode-wakatime"
 
-if [[ ! -a ~/.server_shortcuts ]]; then
+if [[ -a ~/.server_shortcuts ]]; then
   source ~/.server_shortcuts
 fi
