@@ -24,9 +24,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# Initialize rbenv
-eval "$(rbenv init -)"
-
 # Configure the correct version of Java for BUCK
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH=$JAVA_HOME/bin:$PATH
@@ -36,4 +33,9 @@ export NVM_DIR="$HOME/.nvm"
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
+### Add Postgres App binaries to PATH
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
 source "$HOME/.zsh_aliases"
+export PATH="$(pyenv root)/shims:$PATH"
+export GOPATH="$HOME/.golib"
