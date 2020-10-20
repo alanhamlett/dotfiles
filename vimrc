@@ -206,6 +206,8 @@
     au Filetype scss setlocal sts=2 sw=2 nocindent smartindent
     au Filetype c setlocal sts=2 sw=2 nocindent smartindent
     au Filetype vim setlocal sts=4 sw=4
+    au Filetype go setlocal sts=4 sw=4
+    au Filetype go setlocal noexpandtab " Use tabs for indenting
 
     set foldlevel=0 " autofold upon opening file
     set foldopen=block,hor,mark,percent,quickfix,tag " movements that open folds
