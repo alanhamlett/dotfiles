@@ -127,6 +127,7 @@
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'suan/vim-instant-markdown'
     Plugin 'galooshi/vim-import-js'
+    Plugin 'fatih/vim-go'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
 
@@ -212,6 +213,9 @@
 
     " Color tabs red when used for indentation
     function! ShowBadTabs()
+        if &filetype == 'go'
+            return
+        endif
         highlight default BadTabs ctermbg=red guibg=red
         au ColorScheme <buffer> highlight default BadTabs ctermbg=red guibg=red
         match BadTabs /\s*\t\+/
