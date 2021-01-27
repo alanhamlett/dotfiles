@@ -216,6 +216,7 @@
     " Color tabs red when used for indentation
     function! ShowBadTabs()
         if &filetype == 'go'
+            highlight clear BadTabs
             return
         endif
         highlight default BadTabs ctermbg=red guibg=red
