@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="~/.oh-my-zsh"
 
-setopt no_share_history
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -13,6 +11,9 @@ ZSH_THEME="simple"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Disable oh-my-zsh auto update
+DISABLE_AUTO_UPDATE=true
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -41,3 +42,13 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 source "$HOME/.zsh_aliases"
 export PATH="$(pyenv root)/shims:$PATH"
 export GOPATH="$HOME/.golib"
+
+export N_PREFIX="$HOME/.n/"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+unsetopt inc_append_history
+unsetopt share_history
+unsetopt sharehistory

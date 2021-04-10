@@ -1,7 +1,6 @@
 alias ll="ls -la"
 alias l="ls -la"
 alias vi=vim
-alias vim=/usr/local/bin/vim
 alias venv='. ./venv/bin/activate'
 alias venv3='. ./venv3/bin/activate'
 alias sql="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432"
