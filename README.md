@@ -51,7 +51,6 @@ Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/v
 
 [iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized):
 
-* Download [Solarized Dark.itermcolors](https://github.com/altercation/solarized/raw/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors).
 * Open iTerm 2, open Preferences, click on the "Profiles" icon in the preferences toolbar, then select the "colors" tab.
 * Click on the "load presets" and select "import...".
 * Select the Solarized Dark theme file.
