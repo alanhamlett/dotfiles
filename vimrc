@@ -100,7 +100,8 @@
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'fholgado/minibufexpl.vim'
     Plugin 'tmhedberg/matchit'
-    Plugin 'tpope/vim-fugitive'
+    Plugin 'tyru/open-browser.vim'
+    Plugin 'tyru/open-browser-github.vim'
     Plugin 'tpope/vim-rhubarb'
     Plugin 'sjl/gundo.vim'
     Plugin 'alanhamlett/vim-jinja'
@@ -124,12 +125,13 @@
     Plugin 'wavded/vim-stylus'
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
-    Plugin 'ludovicchabant/vim-gutentags'
+    "Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'suan/vim-instant-markdown'
     Plugin 'galooshi/vim-import-js'
     Plugin 'fatih/vim-go'
     "Plugin 'scrooloose/syntastic'
     "Plugin 'davidhalter/jedi-vim'
+    Plugin 'psf/black'
 
     call vundle#end()
     filetype plugin indent on " Re-enable after configuring Vundle
@@ -376,4 +378,6 @@
         endif
     endfunction
     inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+    command GH OpenGithubFile
 " }
