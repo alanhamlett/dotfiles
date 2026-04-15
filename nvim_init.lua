@@ -14,6 +14,7 @@ vim.deprecate = function() end
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
+vim.opt.mouse = ""
 vim.opt.encoding = "utf-8"
 vim.opt.showcmd = true
 vim.opt.hidden = true
@@ -389,10 +390,18 @@ require("lazy").setup({
         map("n", "<leader>e", vim.diagnostic.open_float, opts)
       end
 
-      local servers = { "tsserver", "gopls", "pyright" }
-      for _, server in ipairs(servers) do
-        lspconfig[server].setup({ on_attach = on_attach })
-      end
+      lspconfig.tsserver.setup({ on_attach = on_attach })
+      lspconfig.gopls.setup({ on_attach = on_attach })
+      lspconfig.pyright.setup({
+        on_attach = on_attach,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "off",
+            },
+          },
+        },
+      })
     end,
   },
 
