@@ -46,10 +46,27 @@ vim.opt.updatetime = 300
 
 -- Diagnostics: virtual text while editing, location list on save
 vim.diagnostic.config({
-  virtual_text = { spacing = 4, prefix = "●" },
+  virtual_text = {
+    spacing = 4,
+    prefix = "●",
+    format = function(d)
+      if d.code then
+        return string.format("[%s] %s", d.code, d.message)
+      end
+      return d.message
+    end,
+  },
   signs = true,
   underline = true,
   update_in_insert = false,
+  float = {
+    format = function(d)
+      if d.code then
+        return string.format("[%s] %s", d.code, d.message)
+      end
+      return d.message
+    end,
+  },
 })
 vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
@@ -293,6 +310,9 @@ require("lazy").setup({
           show_buffer_close_icons = false,
           show_close_icon = false,
           separator_style = "thin",
+          custom_filter = function(buf)
+            return vim.bo[buf].buflisted and vim.bo[buf].buftype ~= "quickfix"
+          end,
         },
       })
       -- Buffer navigation (matching your Ctrl-n/p/d mappings)
