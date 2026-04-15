@@ -36,8 +36,6 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-export PATH="$PATH:/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
-
 # export PATH="$(pyenv root)/shims:$PATH"
 
 source "$HOME/.zsh_aliases"

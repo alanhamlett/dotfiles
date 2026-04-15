@@ -7,7 +7,6 @@ alias sqlw="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p543
 alias sqli="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 integrations"
 alias sqlh="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 heartbeats"
 alias sqlr="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 refill"
-alias sqlwd="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -U doadmin -h app-d4d5278c-60dd-4bbd-81af-83e47f7be589-do-user-13978848-0.b.db.ondigitalocean.com -p 25060 -d defaultdb -W"
 alias ag="ag --smart-case --ignore-dir build --ignore-dir datawarehouse --ignore-dir migrations --ignore-dir zxcvbn"
 alias rg="rg -S"
 alias pn="pnpm"
@@ -40,8 +39,6 @@ alias rba='git fetch origin && git rebase -i --autosquash origin/develop'
 alias ccusage='npx ccusage@latest'
 
 alias codewin='GOOS=windows /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
-
-alias mount16tb1="sudo mount -t nfs -o resvport,rw,noowners,nolocks 192.168.1.157:/export/sg16tb1 ~/Exports/sg16tb1"
 
 alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 
