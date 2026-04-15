@@ -1,17 +1,16 @@
 alias ll="ls -la"
 alias l="ls -la"
-alias vi=vim
-alias venv='. ./venv/bin/activate'
-alias venv3='. ./venv3/bin/activate'
+alias vi=nvim
+alias venv='. ./.venv/bin/activate'
 alias sql="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432"
-alias sqlk="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 kneady"
 alias sqlw="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 wakatime"
 alias sqli="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 integrations"
 alias sqlh="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 heartbeats"
 alias sqlr="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -p5432 refill"
+alias sqlwd="'/Applications/Postgres.app/Contents/Versions/latest/bin'/psql -U doadmin -h app-d4d5278c-60dd-4bbd-81af-83e47f7be589-do-user-13978848-0.b.db.ondigitalocean.com -p 25060 -d defaultdb -W"
 alias ag="ag --smart-case --ignore-dir build --ignore-dir datawarehouse --ignore-dir migrations --ignore-dir zxcvbn"
-alias htop="sudo /usr/local/Cellar/htop-osx/0.8.2.2/bin/htop"
 alias rg="rg -S"
+alias pn="pnpm"
 
 alias clone="git clone"
 alias st="git status"
@@ -28,12 +27,21 @@ alias pushf="git push --force-with-lease"
 alias pushn="git push --no-verify"
 alias pushfn="git push --force-with-lease --no-verify"
 alias log="git log"
+alias add="git add"
 alias rebase="git rebase"
 alias reset="git reset"
 alias remote="git remote -v"
 alias fetch="git fetch"
 alias gitprune="git remote prune origin"
 alias rb='curbranch=`git rev-parse --abbrev-ref HEAD`; git checkout master && git pull && git checkout $curbranch && git rebase master'
+alias rbm='curbranch=`git rev-parse --abbrev-ref HEAD`; git checkout main && git pull && git checkout $curbranch && git rebase main'
+alias rba='git fetch origin && git rebase -i --autosquash origin/develop'
+
+alias ccusage='npx ccusage@latest'
+
+alias codewin='GOOS=windows /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
+
+alias mount16tb1="sudo mount -t nfs -o resvport,rw,noowners,nolocks 192.168.1.157:/export/sg16tb1 ~/Exports/sg16tb1"
 
 alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 
@@ -46,6 +54,10 @@ alias assertions="pmset -g assertions"
 # run vscode with proposed api support
 alias codeinsiders="code-insiders -n --enable-proposed-api WakaTime.vscode-wakatime"
 
+# set a mac address with setmacaddress 66:6e:1b:ae:59:29
+alias setmacaddress="sudo ifconfig en0 ether"
+
 if [[ -a ~/.server_shortcuts ]]; then
   source ~/.server_shortcuts
 fi
+

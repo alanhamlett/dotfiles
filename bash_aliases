@@ -1,7 +1,6 @@
 alias ll="ls -la"
 alias l="ls -la"
-alias vi=vim
-alias vim=/usr/local/bin/vim
+alias vi=nvim
 alias brokenxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/'
 
 # git specific

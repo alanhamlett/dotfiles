@@ -402,11 +402,11 @@
   "Terminal Type" : "xterm",
   "Horizontal Spacing" : 1,
   "Tab Color" : {
-    "Red Component" : 0.91093158721923828,
+    "Red Component" : 0.30369853973388672,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.91093158721923828,
+    "Blue Component" : 0.30369853973388672,
     "Alpha Component" : 1,
-    "Green Component" : 0.91093158721923828
+    "Green Component" : 0.30369853973388672
   },
   "Option Key Sends" : 0,
   "Blink Allowed" : false,

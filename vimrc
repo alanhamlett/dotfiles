@@ -74,6 +74,8 @@
     if filereadable(vimrclocal)
         execute 'source ' . fnameescape(vimrclocal)
     endif
+
+    "let g:wakatime_CLIPath = '/Users/user/git/wakatime-cli/build/wakatime-cli-darwin-amd64'
 " }
 
 " {
@@ -118,20 +120,18 @@
     Plugin 'elzr/vim-json'
     Plugin 'othree/javascript-libraries-syntax.vim'
     Plugin 'ctrlpvim/ctrlp.vim' " open fuzzy file finder with CTRL + f
-    Plugin 'kchmck/vim-coffee-script'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
     Plugin 'leafgarland/typescript-vim'
     Plugin 'wavded/vim-stylus'
     Plugin 'mattn/webapi-vim' " required for gist-vim
     Plugin 'mattn/gist-vim' " post current buffer with :Gist
-    "Plugin 'ludovicchabant/vim-gutentags'
-    Plugin 'suan/vim-instant-markdown'
+    " Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'galooshi/vim-import-js'
     Plugin 'fatih/vim-go'
-    "Plugin 'scrooloose/syntastic'
-    "Plugin 'davidhalter/jedi-vim'
-    Plugin 'psf/black'
+    " Plugin 'scrooloose/syntastic'
+    " Plugin 'davidhalter/jedi-vim'
+    " Plugin 'psf/black'
 
     call vundle#end()
     filetype plugin indent on " Re-enable after configuring Vundle
@@ -238,7 +238,7 @@
     let g:prettier#config#trailing_comma = 'all'
 
     " Run prettier before saving supported files
-    autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+    "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 " }
 
 " {
@@ -260,7 +260,8 @@
     if exists('+colorcolumn')
         set colorcolumn=80
         au Filetype ruby setlocal colorcolumn=100
-        au Filetype javascript setlocal colorcolumn=100
+        au Filetype javascript setlocal colorcolumn=160
+        au Filetype python setlocal colorcolumn=160
     endif
 
     " restore cursor position when reopening files
@@ -279,6 +280,7 @@
         " Fix background color for vim-gitgutter
         highlight SignColumn ctermbg=NONE
     endif
+    colorscheme retrobox
 
     " use powerline fonts for airline
     let g:airline_powerline_fonts = 1

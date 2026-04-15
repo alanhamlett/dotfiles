@@ -27,28 +27,46 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# Configure the correct version of Java for BUCK
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PATH=$JAVA_HOME/bin:$PATH
-
-export PATH=~/.npm-global/bin:$PATH
-export NVM_DIR="$HOME/.nvm"
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-### Add Postgres App binaries to PATH
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
+export PATH="$PATH:/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
+
+# export PATH="$(pyenv root)/shims:$PATH"
+
 source "$HOME/.zsh_aliases"
-export PATH="$(pyenv root)/shims:$PATH"
 export GOPATH="$HOME/.golib"
+export PATH="$PATH:$HOME/.golib/bin"
 
 export N_PREFIX="$HOME/.n/"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=~/node_modules/.bin:$PATH
 
 unsetopt inc_append_history
 unsetopt share_history
 unsetopt sharehistory
+
+# export PATH="$HOME/.nodenv/bin:$PATH"
+# eval "$(nodenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$PATH:/Applications/CMake.app/Contents/bin"
+
+export DENO_INSTALL="/Users/user/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion zsh)"
+export PATH="/opt/homebrew/opt/go/bin:$PATH"

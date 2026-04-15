@@ -1,49 +1,70 @@
 # Alan's Dotfiles
 
-Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/vimrc) to get a head-start with [Vim](http://www.vim.org/download.php).
+NeoVim configuration for TypeScript, Go, and Python development.
 
 
 ## Installation
 
+    brew install neovim
     ./install.sh
+
+On first launch, [lazy.nvim](https://github.com/folke/lazy.nvim) will auto-bootstrap and install all plugins. Then install the LSP servers and linters:
+
+    :MasonInstall ruff eslint golangci-lint
+
 
 ## Key Features
 
-* Code folding for bracket or indention based languages
-* Edit multiple files in tabs using minibufexpl plugin
-* Using the [Solarized](https://github.com/altercation/solarized#features) color scheme
-* Using [Vundle](https://github.com/gmarik/vundle#about) for plugin management (apt-get for Vim plugins)
-* Common swp, backup, & view directories (No more ~ files left around)
-* Useful defaults (spaces instead of tabs, remove trailing newlines, etc.)
+* [Solarized Dark](https://github.com/maxmx03/solarized.nvim) color scheme with transparent background
+* Buffer tabs at the top via [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+* LSP support for TypeScript, Go, and Python via [mason](https://github.com/mason-org/mason.nvim) + [lspconfig](https://github.com/neovim/nvim-lspconfig)
+* Async linting while you type via [nvim-lint](https://github.com/mfussenegger/nvim-lint) (ruff, eslint, golangci-lint)
+* Autocompletion with Tab via [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+* [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for syntax highlighting
+* Common swp, backup, & view directories (no more ~ files left around)
+* Useful defaults (spaces instead of tabs, remove trailing whitespace, etc.)
 
 
-## Plugins Included
+## Plugins
 
-* [Solarized Color Scheme](https://github.com/altercation/vim-colors-solarized) - colorscheme for the vim text editor
-* [Airline](https://github.com/bling/vim-airline) - Lean & mean status/tabline for vim
-* [Mini Buffer Explorer](https://github.com/fholgado/minibufexpl.vim#features-overview) - Elegant tab bar showing open files
-* [Fugitive](https://github.com/tpope/vim-fugitive#fugitivevim) - the best Git wrapper of all time
-* [gist-vim](https://github.com/mattn/gist-vim) - post current buffer(s) as a gist
-* [Gundo](https://github.com/sjl/gundo.vim) - visualize your Vim undo tree
-* [LargeFile](http://vim.sourceforge.net/scripts/script.php?script_id=1506) - edit large files quickly
-* [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) - CamelCase motion through words
-* [NERDTree](https://github.com/scrooloose/nerdtree) - file tree explorer plugin
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - show git status for files in NERDTree
-* [WakaTime](https://github.com/wakatime/vim-wakatime) - automatic time tracking and metrics about your programming
-* [Expand-Region](https://github.com/terryma/vim-expand-region) - visually select increasingly larger regions of text
-* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) - fuzzy file finder, alternative to `:e` or NERDTree. Open with `CL` `f`
-* [Surround](https://github.com/tpope/vim-surround) - quoting/parenthesizing made simple
-* [Python-Mode](https://github.com/klen/python-mode) - detect runtime errors in Python code
+* [solarized.nvim](https://github.com/maxmx03/solarized.nvim) - Solarized Dark color scheme
+* [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - Buffer tabs with LSP diagnostics
+* [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Statusline with powerline fonts
+* [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) - File tree explorer
+* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy file finder
+* [CamelCaseMotion](https://github.com/bkad/CamelCaseMotion) - CamelCase motion through words (`,w` `,b` `,e`)
+* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - LSP configs for ts_ls, gopls, pyright
+* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Autocompletion engine
+* [nvim-lint](https://github.com/mfussenegger/nvim-lint) - Async linting (ruff, eslint, golangci-lint)
+* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git status in the gutter
+* [nvim-surround](https://github.com/kylechui/nvim-surround) - Quoting/parenthesizing made simple
+* [vim-go](https://github.com/fatih/vim-go) - Go development plugin
+* [vim-wakatime](https://github.com/wakatime/vim-wakatime) - Automatic time tracking
 
 
-## Screenshot
+## Key Bindings
 
-![VimScreenShot](https://github.com/alanhamlett/dotfiles/raw/master/images/VimScreenShot.png)
+| Key | Action |
+|---|---|
+| `Ctrl-f` | Fuzzy file finder (telescope) |
+| `Ctrl-t` | Toggle file tree |
+| `Ctrl-g` | Go to definition (LSP) |
+| `Ctrl-n` / `Ctrl-p` | Next / previous buffer tab |
+| `Ctrl-d` | Close current buffer |
+| `Ctrl-h/j/k/l` | Navigate between split windows |
+| `K` | Hover documentation (LSP) |
+| `gr` | Find references (LSP) |
+| `\rn` | Rename symbol (LSP) |
+| `\ca` | Code actions (LSP) |
+| `[d` / `]d` | Previous / next diagnostic |
+| `,w` `,b` `,e` | CamelCase word motions |
+| `Space` | Open fold and center line |
+| `f0`-`f9` | Set fold level |
 
 
 ## Font and Color Theme
 
-### Use a font patched for airline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
+### Use a font patched for powerline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf):
 
 [Full list of fonts](https://github.com/powerline/fonts)
 
@@ -54,14 +75,5 @@ Use my [vimrc config file](https://github.com/alanhamlett/dotfiles/blob/master/v
 * Open iTerm 2, open Preferences, click on the "Profiles" icon in the preferences toolbar, then select the "colors" tab.
 * Click on the "load presets" and select "import...".
 * Select the Solarized Dark theme file.
-
-[Guake](https://github.com/coolwanglu/guake-colors-solarized):
-
-    git clone git://github.com/coolwanglu/guake-colors-solarized.git
-    ./guake-colors-solarized/set_dark.sh solarized
-
-### Choose Solarized's light or dark theme in your vimrc file:
-
-    set background=dark
 
 More info on the official [Solarized page](https://github.com/altercation/solarized#features).
