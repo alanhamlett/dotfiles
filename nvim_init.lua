@@ -43,22 +43,26 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 300
 
--- Diagnostics: show list at bottom on save, hide when all clear
+-- Diagnostics: virtual text while editing, location list on save
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = { spacing = 4, prefix = "●" },
   signs = true,
   underline = true,
   update_in_insert = false,
 })
-vim.api.nvim_create_autocmd("DiagnosticChanged", {
+vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function()
-    local diagnostics = vim.diagnostic.get(0)
-    if #diagnostics > 0 then
-      vim.diagnostic.setloclist({ open = true })
-    else
-      -- Close location list if no diagnostics remain
-      vim.cmd("silent! lclose")
-    end
+    -- Wait briefly for diagnostics to update after save
+    vim.defer_fn(function()
+      local diagnostics = vim.diagnostic.get(0)
+      if #diagnostics > 0 then
+        vim.diagnostic.setloclist({ open = false })
+        vim.cmd("silent! lopen")
+        vim.cmd("wincmd p") -- return focus to the file
+      else
+        vim.cmd("silent! lclose")
+      end
+    end, 500)
   end,
 })
 
