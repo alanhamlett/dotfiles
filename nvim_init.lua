@@ -306,7 +306,9 @@ require("lazy").setup({
       require("bufferline").setup({
         options = {
           mode = "buffers",
+          numbers = "ordinal",
           diagnostics = "nvim_lsp",
+          show_buffer_icons = false,
           show_buffer_close_icons = false,
           show_close_icon = false,
           separator_style = "thin",
@@ -319,6 +321,12 @@ require("lazy").setup({
       map("n", "<C-n>", ":BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer" })
       map("n", "<C-p>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer" })
       map("n", "<C-d>", ":bdelete<CR>", { silent = true, desc = "Delete buffer" })
+      -- Jump to buffer by number with \1 through \9
+      for i = 1, 9 do
+        map("n", "<leader>" .. i, function()
+          require("bufferline").go_to(i, true)
+        end, { silent = true, desc = "Go to buffer " .. i })
+      end
     end,
   },
 
