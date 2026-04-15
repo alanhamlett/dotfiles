@@ -4,10 +4,8 @@
 --   Migrated from Vim/Vundle to NeoVim/lazy.nvim
 --
 
--- Suppress vim.tbl_flatten deprecation warnings from plugins
-vim.tbl_flatten = function(t)
-  return vim.iter(t):flatten():totable()
-end
+-- Suppress deprecation warnings from plugins not yet updated for NeoVim 0.12
+vim.deprecate = function() end
 
 -- ============================================================================
 -- General Settings
@@ -44,6 +42,25 @@ vim.opt.colorcolumn = "80"
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 300
+
+-- Diagnostics: show list at bottom on save, hide when all clear
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+})
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  callback = function()
+    local diagnostics = vim.diagnostic.get(0)
+    if #diagnostics > 0 then
+      vim.diagnostic.setloclist({ open = true })
+    else
+      -- Close location list if no diagnostics remain
+      vim.cmd("silent! lclose")
+    end
+  end,
+})
 
 -- Folding
 vim.opt.foldenable = true
@@ -235,17 +252,18 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-  -- Solarized color scheme
+  -- Color scheme
   {
-    "maxmx03/solarized.nvim",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("solarized").setup({
-        transparent = { enabled = true },
+      require("kanagawa").setup({
+        transparent = true,
+        commentStyle = { italic = true },
+        keywordStyle = { italic = true },
       })
-      vim.o.background = "dark"
-      vim.cmd.colorscheme("solarized")
+      vim.cmd.colorscheme("kanagawa")
     end,
   },
 
@@ -286,7 +304,7 @@ require("lazy").setup({
     config = function()
       require("lualine").setup({
         options = {
-          theme = "solarized_dark",
+          theme = "auto",
         },
       })
     end,
@@ -364,6 +382,7 @@ require("lazy").setup({
         map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         map("n", "[d", vim.diagnostic.goto_prev, opts)
         map("n", "]d", vim.diagnostic.goto_next, opts)
+        map("n", "<leader>e", vim.diagnostic.open_float, opts)
       end
 
       local servers = { "tsserver", "gopls", "pyright" }
@@ -439,9 +458,16 @@ require("lazy").setup({
         go = { "golangcilint" },
       }
       -- Lint on save AND while typing (debounced via TextChanged)
+      -- Only run if the linter binary exists to avoid ENOENT errors
       vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged", "InsertLeave", "BufEnter" }, {
         callback = function()
-          lint.try_lint()
+          local linters = lint.linters_by_ft[vim.bo.filetype] or {}
+          for _, name in ipairs(linters) do
+            local cmd = lint.linters[name] and lint.linters[name].cmd
+            if cmd and vim.fn.executable(cmd) == 1 then
+              lint.try_lint(name)
+            end
+          end
         end,
       })
     end,
