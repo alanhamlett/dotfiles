@@ -504,7 +504,9 @@ require("lazy").setup({
         callback = function()
           local linters = lint.linters_by_ft[vim.bo.filetype] or {}
           for _, name in ipairs(linters) do
-            local cmd = lint.linters[name] and lint.linters[name].cmd
+            local linter = lint.linters[name]
+            local cmd = linter and linter.cmd
+            if type(cmd) == "function" then cmd = cmd() end
             if cmd and vim.fn.executable(cmd) == 1 then
               lint.try_lint(name)
             end
