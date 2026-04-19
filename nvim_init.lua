@@ -397,6 +397,9 @@ require("lazy").setup({
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
+        -- Servers are configured explicitly below; disable automatic_enable
+        -- to avoid auto-starting unrelated installed servers (e.g. stylua).
+        automatic_enable = false,
         ensure_installed = {
           "ts_ls",         -- TypeScript
           "gopls",         -- Go
