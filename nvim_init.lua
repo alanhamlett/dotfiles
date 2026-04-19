@@ -398,7 +398,7 @@ require("lazy").setup({
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "tsserver",      -- TypeScript
+          "ts_ls",         -- TypeScript
           "gopls",         -- Go
           "pyright",       -- Python
         },
@@ -418,7 +418,7 @@ require("lazy").setup({
         map("n", "<leader>e", vim.diagnostic.open_float, opts)
       end
 
-      lspconfig.tsserver.setup({ on_attach = on_attach })
+      lspconfig.ts_ls.setup({ on_attach = on_attach })
       lspconfig.gopls.setup({ on_attach = on_attach })
       lspconfig.pyright.setup({
         on_attach = on_attach,
