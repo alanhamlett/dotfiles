@@ -383,7 +383,13 @@ require("lazy").setup({
           "html", "htmldjango", "css", "json", "yaml", "markdown",
         },
         highlight = { enable = true },
-        indent = { enable = true },
+        -- treesitter's JS/TS indent returns 0 in many contexts (arrow bodies,
+        -- after certain tokens), causing Enter to drop to column 0. Fall back
+        -- to autoindent for these languages.
+        indent = {
+          enable = true,
+          disable = { "javascript", "typescript", "tsx" },
+        },
       })
       -- html parser's `#set-lang-from-mimetype!` directive crashes on
       -- <script type="x-tmpl-mustache"> (nvim 0.12 treesitter.lua:196 --
