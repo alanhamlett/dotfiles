@@ -380,11 +380,59 @@ require("lazy").setup({
           "go", "gomod", "gosum",
           "python",
           "lua", "vim", "vimdoc",
-          "html", "css", "json", "yaml", "markdown",
+          "html", "htmldjango", "css", "json", "yaml", "markdown",
         },
         highlight = { enable = true },
         indent = { enable = true },
       })
+      -- html parser's `#set-lang-from-mimetype!` directive crashes on
+      -- <script type="x-tmpl-mustache"> (nvim 0.12 treesitter.lua:196 --
+      -- attempt to call method 'range' on nil). Override the html injection
+      -- query to drop the mimetype-driven <script type="..."> injection,
+      -- keeping CSS/JS/style-attribute injections intact.
+      vim.treesitter.query.set("html", "injections", [[
+        ((comment) @injection.content
+          (#set! injection.language "comment"))
+
+        ((style_element
+          (start_tag) @_no_type_lang
+          (raw_text) @injection.content)
+          (#not-lua-match? @_no_type_lang "%slang%s*=")
+          (#not-lua-match? @_no_type_lang "%stype%s*=")
+          (#set! injection.language "css"))
+
+        ((style_element
+          (start_tag
+            (attribute
+              (attribute_name) @_type
+              (quoted_attribute_value
+                (attribute_value) @_css)))
+          (raw_text) @injection.content)
+          (#eq? @_type "type")
+          (#eq? @_css "text/css")
+          (#set! injection.language "css"))
+
+        ((script_element
+          (start_tag) @_no_type_lang
+          (raw_text) @injection.content)
+          (#not-lua-match? @_no_type_lang "%slang%s*=")
+          (#not-lua-match? @_no_type_lang "%stype%s*=")
+          (#set! injection.language "javascript"))
+
+        ((attribute
+          (attribute_name) @_attr
+          (quoted_attribute_value
+            (attribute_value) @injection.content))
+          (#eq? @_attr "style")
+          (#set! injection.language "css"))
+
+        ((attribute
+          (attribute_name) @_name
+          (#lua-match? @_name "^on[a-z]+$")
+          (quoted_attribute_value
+            (attribute_value) @injection.content))
+          (#set! injection.language "javascript"))
+      ]])
     end,
   },
 
