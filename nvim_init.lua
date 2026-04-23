@@ -388,7 +388,7 @@ require("lazy").setup({
         -- to autoindent for these languages.
         indent = {
           enable = true,
-          disable = { "javascript", "typescript", "tsx" },
+          disable = { "javascript", "typescript", "tsx", "python" },
         },
       })
       -- html parser's `#set-lang-from-mimetype!` directive crashes on
