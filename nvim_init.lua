@@ -380,7 +380,7 @@ require("lazy").setup({
           "go", "gomod", "gosum",
           "python",
           "lua", "vim", "vimdoc",
-          "html", "htmldjango", "css", "json", "yaml", "markdown",
+          "html", "htmldjango", "css", "json", "yaml", "markdown", "markdown_inline",
         },
         highlight = { enable = true },
         -- treesitter's JS/TS indent returns 0 in many contexts (arrow bodies,
@@ -396,6 +396,39 @@ require("lazy").setup({
       -- attempt to call method 'range' on nil). Override the html injection
       -- query to drop the mimetype-driven <script type="..."> injection,
       -- keeping CSS/JS/style-attribute injections intact.
+      --
+      -- The markdown query shipped by some nvim-treesitter versions still uses
+      -- `#set-lang-from-info-string!`, which can hit the same nil-range crash
+      -- with Neovim 0.12's injection handling. Use the 0.12-compatible form
+      -- from the bundled runtime query instead.
+      vim.treesitter.query.set("markdown", "injections", [[
+        (fenced_code_block
+          (info_string
+            (language) @injection.language)
+          (code_fence_content) @injection.content)
+
+        ((html_block) @injection.content
+          (#set! injection.language "html")
+          (#set! injection.combined)
+          (#set! injection.include-children))
+
+        ((minus_metadata) @injection.content
+          (#set! injection.language "yaml")
+          (#offset! @injection.content 1 0 -1 0)
+          (#set! injection.include-children))
+
+        ((plus_metadata) @injection.content
+          (#set! injection.language "toml")
+          (#offset! @injection.content 1 0 -1 0)
+          (#set! injection.include-children))
+
+        ([
+          (inline)
+          (pipe_table_cell)
+        ] @injection.content
+          (#set! injection.language "markdown_inline"))
+      ]])
+
       vim.treesitter.query.set("html", "injections", [[
         ((comment) @injection.content
           (#set! injection.language "comment"))
