@@ -633,6 +633,16 @@ require("lazy").setup({
     end,
   },
 
+  -- Git blame
+  {
+    "FabijanZulj/blame.nvim",
+    cmd = { "BlameToggle" },
+    config = function()
+      require("blame").setup()
+      map("n", "<leader>gb", ":BlameToggle<CR>", { silent = true, desc = "Toggle git blame" })
+    end,
+  },
+
   -- Surround (replaces vim-surround)
   {
     "kylechui/nvim-surround",

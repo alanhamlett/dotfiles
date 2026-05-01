@@ -34,6 +34,7 @@ On first launch, [lazy.nvim](https://github.com/folke/lazy.nvim) will auto-boots
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Autocompletion engine
 - [nvim-lint](https://github.com/mfussenegger/nvim-lint) - Async linting (ruff, eslint, golangci-lint)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git status in the gutter
+- [blame.nvim](https://github.com/FabijanZulj/blame.nvim) - Git blame view (`:BlameToggle`)
 - [nvim-surround](https://github.com/kylechui/nvim-surround) - Quoting/parenthesizing made simple
 - [vim-go](https://github.com/fatih/vim-go) - Go development plugin
 - [vim-wakatime](https://github.com/wakatime/vim-wakatime) - Automatic time tracking
@@ -57,6 +58,17 @@ On first launch, [lazy.nvim](https://github.com/folke/lazy.nvim) will auto-boots
 | `,w` `,b` `,e`      | CamelCase word motions                  |
 | `Space`             | Open fold and center line               |
 | `f0`-`f9`           | Set fold level                          |
+
+## Git Blame
+
+Run `:BlameToggle` to open the blame view next to the buffer. Inside the blame window:
+
+| Key         | Action                                            |
+| ----------- | ------------------------------------------------- |
+| `Tab`       | Step back in history (file state before commit)   |
+| `Backspace` | Step forward in history                           |
+| `y`         | Copy the commit hash                              |
+| `o`         | Open the commit on GitHub in the browser          |
 
 ## Diagnostics
 
