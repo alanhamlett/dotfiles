@@ -44,6 +44,26 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 300
 
+-- Filter out deprecation diagnostics from any LSP — too noisy.
+-- Wraps vim.diagnostic.set so it catches both push (publishDiagnostics)
+-- and pull (textDocument/diagnostic) paths after LSP→vim conversion.
+local function is_deprecated(d)
+  if d._tags and d._tags.deprecated then return true end
+  if d.tags then
+    for _, tag in ipairs(d.tags) do
+      if tag == vim.lsp.protocol.DiagnosticTag.Deprecated then
+        return true
+      end
+    end
+  end
+  return false
+end
+local orig_diag_set = vim.diagnostic.set
+vim.diagnostic.set = function(namespace, bufnr, diagnostics, opts)
+  diagnostics = vim.tbl_filter(function(d) return not is_deprecated(d) end, diagnostics)
+  return orig_diag_set(namespace, bufnr, diagnostics, opts)
+end
+
 -- Diagnostics: virtual text while editing, location list on save
 vim.diagnostic.config({
   virtual_text = {

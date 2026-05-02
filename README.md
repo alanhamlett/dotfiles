@@ -84,6 +84,16 @@ Additional keybindings for diagnostics:
 | `\e`        | Show full diagnostic in a floating popup |
 | `[d` / `]d` | Jump to previous / next diagnostic       |
 
+Deprecation notes from LSP servers (e.g. pyright's `datetime.utcnow` warning) are filtered globally. To suppress other warnings on a single line, use the linter's inline directive:
+
+| Tool                          | Inline directive                                         |
+| ----------------------------- | -------------------------------------------------------- |
+| flake8 / pycodestyle / ruff   | `# noqa: E402` (or `# noqa` for all codes)               |
+| pyright / basedpyright        | `# pyright: ignore[reportXxx]` or `# type: ignore`       |
+| mypy                          | `# type: ignore[code]`                                   |
+| eslint                        | `// eslint-disable-line rule-name`                       |
+| typescript (tsc)              | `// @ts-expect-error` (on the line above)                |
+
 ## Font
 
 Use a font patched for powerline compatibility, like [Anonymous Pro](https://github.com/powerline/fonts/raw/master/AnonymousPro/Anonymice%20Powerline.ttf).
