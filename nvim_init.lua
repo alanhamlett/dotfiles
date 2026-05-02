@@ -44,23 +44,38 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 300
 
--- Filter out deprecation diagnostics from any LSP — too noisy.
+-- Filter noisy LSP diagnostics:
+--   - deprecation notes (always)
+--   - unused-symbol notes when the symbol starts with `_` (intentional convention)
 -- Wraps vim.diagnostic.set so it catches both push (publishDiagnostics)
 -- and pull (textDocument/diagnostic) paths after LSP→vim conversion.
-local function is_deprecated(d)
-  if d._tags and d._tags.deprecated then return true end
+local function has_tag(d, tag_name, tag_value)
+  if d._tags and d._tags[tag_name] then return true end
   if d.tags then
-    for _, tag in ipairs(d.tags) do
-      if tag == vim.lsp.protocol.DiagnosticTag.Deprecated then
-        return true
-      end
+    for _, t in ipairs(d.tags) do
+      if t == tag_value then return true end
     end
+  end
+  return false
+end
+local function symbol_at(bufnr, d)
+  local line = vim.api.nvim_buf_get_lines(bufnr, d.lnum, d.lnum + 1, false)[1]
+  if not line or not d.end_col then return "" end
+  return line:sub(d.col + 1, d.end_col)
+end
+local function is_filtered(bufnr, d)
+  if has_tag(d, "deprecated", vim.lsp.protocol.DiagnosticTag.Deprecated) then
+    return true
+  end
+  if has_tag(d, "unnecessary", vim.lsp.protocol.DiagnosticTag.Unnecessary)
+     and symbol_at(bufnr, d):match("^_") then
+    return true
   end
   return false
 end
 local orig_diag_set = vim.diagnostic.set
 vim.diagnostic.set = function(namespace, bufnr, diagnostics, opts)
-  diagnostics = vim.tbl_filter(function(d) return not is_deprecated(d) end, diagnostics)
+  diagnostics = vim.tbl_filter(function(d) return not is_filtered(bufnr, d) end, diagnostics)
   return orig_diag_set(namespace, bufnr, diagnostics, opts)
 end
 
@@ -94,7 +109,20 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.defer_fn(function()
       local diagnostics = vim.diagnostic.get(0)
       if #diagnostics > 0 then
-        vim.diagnostic.setloclist({ open = false })
+        local items = vim.diagnostic.toqflist(diagnostics)
+        for i, item in ipairs(items) do
+          local d = diagnostics[i]
+          local tag
+          if d.source and d.code then
+            tag = string.format("%s: %s", d.source, d.code)
+          else
+            tag = d.code or d.source
+          end
+          if tag then
+            item.text = string.format("[%s] %s", tag, d.message)
+          end
+        end
+        vim.fn.setloclist(0, {}, " ", { title = "Diagnostics", items = items })
         vim.cmd("silent! lopen")
         vim.cmd("wincmd p") -- return focus to the file
       else
