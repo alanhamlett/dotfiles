@@ -68,3 +68,5 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 export PATH="/opt/homebrew/opt/go/bin:$PATH"
+
+export CODEX_TUI_DISABLE_KEYBOARD_ENHANCEMENT=1
